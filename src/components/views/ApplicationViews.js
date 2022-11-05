@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import { EmployeeViews } from "./EmployeeViews";
 
 export const ApplicationViews = () => {
   const localUser = localStorage.getItem("project_user");
