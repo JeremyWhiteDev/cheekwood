@@ -1,10 +1,25 @@
+import { Route, Routes } from "react-router-dom";
+
 export const ApplicationViews = () => {
   const localUser = localStorage.getItem("project_user");
   const projectUserObject = JSON.parse(localUser);
 
-  if (projectUserObject.userType === "employee") {
-    return "<h1>Employee Views</h1>";
-  } else {
-    return "<h1>Patron Views</h1>";
-  }
+  return (
+    <Routes>
+      <Route path="/about-us" element={<>about-us </>} />
+      <Route path="/map" element={<>map</>} />
+      <Route path="/events" element={<>EventList</>} />
+      <Route path="/event/:eventId" element={<>Event Details</>} />
+      <Route path="/profile" element={<>Profile</>} />
+
+      {projectUserObject.userType === "employee" ? (
+        <>
+          <Route path="/add-event" element={<>add Event</>} />
+          <Route path="/event/edit/:eventId" element={<>edit event</>} />
+        </>
+      ) : (
+        ""
+      )}
+    </Routes>
+  );
 };
