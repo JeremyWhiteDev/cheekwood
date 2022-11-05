@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Jeremy White",
+      "email": "jwhite@me.com",
+      "userTypeId": 1
+    },
+    {
+      "id": 2,
+      "fullName": "Erica Clayton",
+      "email": "eclayton@me.com",
+      "userTypeId": 2
+    }
+  ],
+  "userTypes": [
+    {
+      "id": 1,
+      "type": "employee"
+    },
+    {
+      "id": 2,
+      "type": "patron"
+    }
+  ]
+}
