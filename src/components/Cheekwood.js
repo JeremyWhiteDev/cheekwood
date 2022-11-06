@@ -3,6 +3,7 @@ import { Authorized } from "./views/Authorized";
 import { ApplicationViews } from "./views/ApplicationViews";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
+import { Navbar } from "./nav/Navbar";
 
 export const Cheekwood = () => {
   return (
@@ -15,6 +16,7 @@ export const Cheekwood = () => {
         element={
           <Authorized>
             <>
+              <Navbar />
               <ApplicationViews />
             </>
           </Authorized>

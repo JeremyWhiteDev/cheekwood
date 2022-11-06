@@ -1,0 +1,17 @@
+.navBar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1vh 4vh;
+    list-style: none;
+
+}
+
+.navBar a {
+    text-decoration: none;
+}
+
+.navBar img {
+    width: 200px;
+    height: 200px;
+    border: solid 2px black;
+}
