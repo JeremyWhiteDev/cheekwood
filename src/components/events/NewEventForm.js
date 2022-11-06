@@ -16,6 +16,15 @@ export const NewEventForm = () => {
 
   const [eventTypes, setEventTypes] = useState([]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`http://localhost:8088/eventTypes`);
+      const data = await response.json();
+      setEventTypes(data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <>
       <section className="event-form-component">
@@ -65,6 +74,31 @@ export const NewEventForm = () => {
                 setEventDetails(copy);
               }}
             />
+          </fieldset>
+
+          <fieldset>
+            <label htmlFor="eventType">Event Type</label>
+            <select
+              name="eventType"
+              required
+              onChange={(event) => {
+                const formCopy = { ...eventDetails };
+
+                formCopy.eventTypeId = parseInt(event.target.value);
+                setEventDetails(formCopy);
+              }}
+            >
+              <option id="procuctType--default" value={0}>
+                Choose the Event Type
+              </option>
+              {eventTypes.map((eventType) => {
+                return (
+                  <option key={eventType.id} value={eventType.id}>
+                    {eventType.type}
+                  </option>
+                );
+              })}
+            </select>
           </fieldset>
           <fieldset>
             <label htmlFor="eventTimeType">All Day Event?: </label>
@@ -139,9 +173,28 @@ export const NewEventForm = () => {
               />
             )}
           </fieldset>
+          <fieldset>
+            <label htmlFor="eventPicture">Event Picture Link:</label>
+            <input
+              required
+              type="text"
+              className="form-field"
+              placeholder="Link goes here"
+              value={eventDetails.linkImage}
+              onChange={(evt) => {
+                const copy = { ...eventDetails };
+                copy.linkImage = evt.target.value;
+                setEventDetails(copy);
+              }}
+            />
+          </fieldset>
+          <button>Submit</button>
         </section>
         <section className="preview-img-component">
-          <img src={eventDetails.linkImage} />
+          <img
+            src={eventDetails.linkImage}
+            onError="this.onerror=null; this.src='Default.jpg"
+          />
           <p>img</p>
         </section>
       </section>
