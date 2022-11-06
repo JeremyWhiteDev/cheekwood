@@ -1,17 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Libre+Baskerville|News+Cycle");
+
 .navBar {
     display: flex;
-    justify-content: space-between;
-    padding: 1vh 4vh;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh 0;
     list-style: none;
-
+    text-align: right;
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: -18px;
+    background-color: white;
+    z-index: 99;
 }
 
 .navBar a {
     text-decoration: none;
+    color: #2D1A02;
+    padding: 0 3vh
 }
 
-.navBar img {
-    width: 200px;
-    height: 200px;
-    border: solid 2px black;
+.logo {
+    margin: 1vh;
+    width: 22vh;
+    padding-right: 5vh;
+    position: relative;
+    top: 0.5vh;
+}
+
+.navSpacer {
+    margin-bottom: 14vh;
 }

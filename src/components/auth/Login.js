@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+
 import "./Login.css";
 
 export const Login = () => {
@@ -30,11 +31,11 @@ export const Login = () => {
       });
   };
 
-  return (
+  return <>
+    <img className="logo" src={require("../nav/images/logo.png")} alt="" />
     <main className="container--login">
       <section>
         <form className="form--login" onSubmit={handleLogin}>
-          <h1>Project Name</h1>
           <h2>Please sign in</h2>
           <fieldset>
             <label htmlFor="inputEmail"> Email address </label>
@@ -57,5 +58,6 @@ export const Login = () => {
         <Link to="/register">Not a member yet?</Link>
       </section>
     </main>
-  );
+  </>
+
 };

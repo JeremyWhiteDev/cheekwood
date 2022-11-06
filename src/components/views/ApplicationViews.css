@@ -1,0 +1,35 @@
+.heroImg {
+    width: 115%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    right: 5vh;
+    height: 50vh;
+
+}
+
+.linkContainer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.linkContainer div {
+    position: relative;
+    margin: 10px 0;
+}
+
+.linkContainer h4 {
+
+    position: absolute;
+    top: 3.4vh;
+    left: 5vw;
+    font-size: 2vw;
+    color: white;
+    text-transform: uppercase;
+}
+
+.linkImg {
+    width: 20vw;
+}
