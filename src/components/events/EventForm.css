@@ -1,0 +1,41 @@
+.event-form-component {
+    width: 100%;
+    max-width: 80%;
+    background-color: aqua;
+    display: flex;
+    margin: auto;
+}
+
+.event-form {
+    background-color: blue;
+    height: 100vh;
+    width: 100%;
+    max-width: 80%;
+    padding: 20px;
+}
+
+.preview-img-component {
+    max-width: 20%;
+    background-color: red;
+    height: 100vh;
+    width: 100%;
+    max-width: 80%;
+    margin: 10px;
+}
+
+label {
+    font-weight: 700;
+    font-size: large;
+}
+
+input {
+    margin: 10px 0
+}
+
+
+
+.form-field {
+    width: 100%;
+    line-height: 2.5;
+    font-size: medium;
+}

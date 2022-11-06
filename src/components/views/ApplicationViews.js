@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { NewEventForm } from "../events/NewEventForm";
 
 export const ApplicationViews = () => {
   const localUser = localStorage.getItem("project_user");
@@ -14,7 +15,7 @@ export const ApplicationViews = () => {
 
       {projectUserObject.userType === "employee" ? (
         <>
-          <Route path="/add-event" element={<>add Event</>} />
+          <Route path="/add-event" element={<NewEventForm />} />
           <Route path="/event/edit/:eventId" element={<>edit event</>} />
         </>
       ) : (
