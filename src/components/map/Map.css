@@ -1,0 +1,24 @@
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
+.map_logo{
+    padding: 3rem;
+}
+
+.map_image{
+    margin-bottom: 3rem;
+}
+
+.map_cta{
+    padding: 0.5rem;
+    margin-top: 5rem;
+    border:solid 2px #05B387;
+    background-color:#EEEEEE;
+    text-decoration:none;
+    color: #286142;
+    width: 20REM;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}
