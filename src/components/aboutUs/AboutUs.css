@@ -78,7 +78,7 @@ h2{
 
 .about_MVGs{
     width: 100vmax;
-    text-align: center;
+    justify-content: center;
     margin-bottom: 6px;
     margin-top: 12px;
     display: flex;
@@ -90,6 +90,7 @@ h2{
     padding:1.5rem;
     width: 25%;
     float: left;
+    text-align: center;
 }
 
 .about_hours{
