@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { AboutUs } from "../aboutUs/AboutUs";
-import { Footer } from "../footer/Footer";
+//import { Footer } from "../footer/Footer";
 import { Map } from "../map/Map";
 
 export const ApplicationViews = () => {
@@ -16,7 +16,7 @@ export const ApplicationViews = () => {
       <Route path="/profile" element={<>Profile</>} />
       <Route path="/aboutUs" element={<AboutUs/>} />
       <Route path="/map" element={<Map/>} />
-      <Route path="/" element={<Footer/>} />
+     { /* <Route path="/" element={<Footer/>} /> */}
 
 
       {projectUserObject.userType === "employee" ? (
