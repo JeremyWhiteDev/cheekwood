@@ -58,8 +58,9 @@ export const NewEventForm = ({ variant }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e.target.checkValidity());
-    if (e.target.checkValidity()) {
+    const form = document.getElementById("eventForm");
+    console.log(form.checkValidity());
+    if (form.checkValidity()) {
       const response = await fetch(`http://localhost:8088/events`, {
         method: "POST",
         headers: {
@@ -68,20 +69,24 @@ export const NewEventForm = ({ variant }) => {
         body: JSON.stringify(eventDetails),
       });
     } else {
-      e.target.reportValidity();
+      form.reportValidity();
     }
   };
 
   const handleUpdate = async (e) => {
     e.preventDefault();
-
-    const response = await fetch(`http://localhost:8088/events/${eventId}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(eventDetails),
-    });
+    const form = document.getElementById("eventForm");
+    if (form.checkValidity()) {
+      const response = await fetch(`http://localhost:8088/events/${eventId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(eventDetails),
+      });
+    } else {
+      form.reportValidity();
+    }
   };
 
   const handleDelete = async () => {
@@ -105,7 +110,7 @@ export const NewEventForm = ({ variant }) => {
     <>
       <section className="event-form-component">
         <section className="event-form">
-          <form>
+          <form id="eventForm">
             <fieldset>
               <label htmlFor="eventName">Event Name:</label>
               <input
@@ -183,7 +188,6 @@ export const NewEventForm = ({ variant }) => {
             <fieldset>
               <label htmlFor="eventTimeType">All Day Event?: </label>
               <input
-                required
                 type="checkbox"
                 className="form-checkbox"
                 checked={dateTypeIsAllDay}
