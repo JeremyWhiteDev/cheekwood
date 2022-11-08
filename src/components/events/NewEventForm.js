@@ -25,6 +25,28 @@ export const NewEventForm = () => {
     fetchData();
   }, []);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const postData = async (data) => {
+      //declare fetchOptions
+      const fetchOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      };
+      //fetch stringified entry obj
+      const response = await fetch(
+        `http://localhost:8088/events`,
+        fetchOptions
+      );
+      //handle response
+    };
+    // fetchData();
+  };
+
   return (
     <>
       <section className="event-form-component">
@@ -77,7 +99,7 @@ export const NewEventForm = () => {
           </fieldset>
 
           <fieldset>
-            <label htmlFor="eventType">Event Type</label>
+            <label htmlFor="eventType">Event Type:</label>
             <select
               name="eventType"
               required
@@ -188,14 +210,18 @@ export const NewEventForm = () => {
               }}
             />
           </fieldset>
-          <button>Submit</button>
+          <button
+            className="submit-btn"
+            onClick={(click) => {
+              handleSubmit(click);
+            }}
+          >
+            Submit
+          </button>
         </section>
         <section className="preview-img-component">
-          <img
-            src={eventDetails.linkImage}
-            onError="this.onerror=null; this.src='Default.jpg"
-          />
-          <p>img</p>
+          <h3>Event Image Preview</h3>
+          <img className="preview-img" src={eventDetails.linkImage} />
         </section>
       </section>
     </>
