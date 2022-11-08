@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { EventList } from "../events/EventList";
 
 export const ApplicationViews = () => {
   const localUser = localStorage.getItem("project_user");
@@ -8,7 +9,7 @@ export const ApplicationViews = () => {
     <Routes>
       <Route path="/about-us" element={<>about-us </>} />
       <Route path="/map" element={<>map</>} />
-      <Route path="/events" element={<>EventList</>} />
+      <Route path="/events" element={< EventList/>} />
       <Route path="/event/:eventId" element={<>Event Details</>} />
       <Route path="/profile" element={<>Profile</>} />
 
