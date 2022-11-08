@@ -4,6 +4,7 @@ import { ApplicationViews } from "./views/ApplicationViews";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 import { Navbar } from "./nav/Navbar";
+import { Footer } from "./footer/Footer";
 
 export const Cheekwood = () => {
   return (
@@ -18,6 +19,7 @@ export const Cheekwood = () => {
             <>
               <Navbar />
               <ApplicationViews />
+              <Footer />
             </>
           </Authorized>
         }
