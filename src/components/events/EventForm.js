@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./EventForm.css";
 
-export const NewEventForm = ({ variant }) => {
+export const EventForm = ({ variant }) => {
   const [eventDetails, setEventDetails] = useState({
     name: "",
     summary: "",
