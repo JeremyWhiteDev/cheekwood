@@ -95,6 +95,9 @@ export const Footer = () => {
                                 </span>
                             </a>
                         </ul>
+                        <div>
+                            <p className="copyright">©2022 Nss Hex-Clan</p>
+                        </div>
                     </section>
                 </div>
             </footer>
