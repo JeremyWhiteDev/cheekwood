@@ -8,9 +8,9 @@ export const Navbar = () => {
 
     return <ul className="navBar">
         {/* <li><img src={logo} alt="" /></li> */}
-        <li className="navBar_item"><Link className="navBar_link" to="">About Us</Link></li>
+        <li className="navBar_item"><Link className="navBar_link" to="/aboutUs">About Us</Link></li>
+        <li className="navBar_item"><Link className="navBar_link" to="/map">Map</Link></li>
         <li className="navBar_item"><Link className="navBar_link" to="">Directions</Link></li>
-        <li className="navBar_item"><Link className="navBar_link" to="">Events</Link></li>
         <li className="navBar_item"><Link className="navBar_link" to="">Events</Link></li>
         <li className="navBar_item"><Link className="navBar_link" to="">My Events</Link></li>
         <li className="navBar_item"><Link className="navBar_link" to="">Profile</Link></li>
