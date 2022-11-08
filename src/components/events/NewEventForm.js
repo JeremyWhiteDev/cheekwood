@@ -25,26 +25,17 @@ export const NewEventForm = () => {
     fetchData();
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const postData = async (data) => {
-      //declare fetchOptions
-      const fetchOptions = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      };
-      //fetch stringified entry obj
-      const response = await fetch(
-        `http://localhost:8088/events`,
-        fetchOptions
-      );
-      //handle response
-    };
-    // fetchData();
+    //fetch stringified entry obj
+    const response = await fetch(`http://localhost:8088/events`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(eventDetails),
+    });
   };
 
   return (
