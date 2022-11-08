@@ -22,7 +22,10 @@ export const ApplicationViews = () => {
       {projectUserObject.userType === "employee" ? (
         <>
           <Route path="/add-event" element={<NewEventForm />} />
-          <Route path="/event/edit/:eventId" element={<>edit event</>} />
+          <Route
+            path="/event/edit/:eventId"
+            element={<NewEventForm variant="editForm" />}
+          />
         </>
       ) : (
         ""

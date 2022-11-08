@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { useParams } from "react-router-dom";
 import "./EventForm.css";
 
-export const NewEventForm = () => {
+export const NewEventForm = ({ variant }) => {
   const [eventDetails, setEventDetails] = useState({
     name: "",
     summary: "",
@@ -11,10 +12,24 @@ export const NewEventForm = () => {
     eventTypeId: 0,
     linkImage: "",
   });
-
   const [dateTypeIsAllDay, setDateType] = useState(false);
 
   const [eventTypes, setEventTypes] = useState([]);
+
+  const { eventId } = useParams();
+  // console.log(eventId);
+
+  useEffect(() => {
+    if (variant === "editForm") {
+      const fetchData = async () => {
+        const response = await fetch(`http://localhost:8088/events/${eventId}`);
+        const data = await response.json();
+        console.log(data);
+        setEventDetails(data);
+      };
+      fetchData();
+    }
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,6 +50,25 @@ export const NewEventForm = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(eventDetails),
+    });
+  };
+
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+
+    //fetch stringified entry obj
+    const response = await fetch(`http://localhost:8088/events/${eventId}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(eventDetails),
+    });
+  };
+
+  const handleDelete = async () => {
+    const response = await fetch(`http://localhost:8088/events/${eventId}`, {
+      method: "DELETE",
     });
   };
 
@@ -101,8 +135,11 @@ export const NewEventForm = () => {
                 setEventDetails(formCopy);
               }}
             >
-              <option id="procuctType--default" value={0}>
-                Choose the Event Type
+              <option
+                id="procuctType--default"
+                value={eventDetails.eventTypeId}
+              >
+                {eventDetails.eventTypeId}
               </option>
               {eventTypes.map((eventType) => {
                 return (
@@ -201,14 +238,35 @@ export const NewEventForm = () => {
               }}
             />
           </fieldset>
-          <button
-            className="submit-btn"
-            onClick={(click) => {
-              handleSubmit(click);
-            }}
-          >
-            Submit
-          </button>
+          {variant === "editForm" ? (
+            <>
+              <button
+                className="update-btn"
+                onClick={(click) => {
+                  handleUpdate(click);
+                }}
+              >
+                Update
+              </button>
+              <button
+                className="delete-btn"
+                onClick={(click) => {
+                  handleDelete(click);
+                }}
+              >
+                Delete
+              </button>
+            </>
+          ) : (
+            <button
+              className="submit-btn"
+              onClick={(click) => {
+                handleSubmit(click);
+              }}
+            >
+              Submit
+            </button>
+          )}
         </section>
         <section className="preview-img-component">
           <h3>Event Image Preview</h3>

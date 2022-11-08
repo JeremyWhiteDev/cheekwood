@@ -86,8 +86,37 @@ input, textarea {
     box-shadow: 0 0 2px gray;
 }
 .submit-btn:hover {
-    width: 100%;
+ 
+    background-color: #51a651;
+    cursor: pointer;
+}
+.update-btn {
+    width: 40%;
     height: 40px;
+    border-radius: 12px;
+    background-color: #5cb85c;
+    font-weight: 700;
+    font-size: large;
+    color: aliceblue;
+    border: 1px solid gray;
+    box-shadow: 0 0 2px gray;
+}
+.update-btn:hover {
+    background-color: #51a651;
+    cursor: pointer;
+}
+.delete-btn {
+    width: 40%;
+    height: 40px;
+    border-radius: 12px;
+    background-color: #5cb85c;
+    font-weight: 700;
+    font-size: large;
+    color: aliceblue;
+    border: 1px solid gray;
+    box-shadow: 0 0 2px gray;
+}
+.delete-btn:hover {
     background-color: #51a651;
     cursor: pointer;
 }
