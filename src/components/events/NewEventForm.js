@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./EventForm.css";
 
 export const NewEventForm = ({ variant }) => {
@@ -20,6 +20,8 @@ export const NewEventForm = ({ variant }) => {
 
   const { eventId } = useParams();
   // console.log(eventId);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (variant === "editForm") {
@@ -68,6 +70,8 @@ export const NewEventForm = ({ variant }) => {
         },
         body: JSON.stringify(eventDetails),
       });
+      await response.json();
+      navigate("/events");
     } else {
       form.reportValidity();
     }
@@ -84,6 +88,8 @@ export const NewEventForm = ({ variant }) => {
         },
         body: JSON.stringify(eventDetails),
       });
+      await response.json();
+      navigate("/events");
     } else {
       form.reportValidity();
     }
@@ -93,6 +99,8 @@ export const NewEventForm = ({ variant }) => {
     const response = await fetch(`http://localhost:8088/events/${eventId}`, {
       method: "DELETE",
     });
+    await response.json();
+    navigate("/events");
   };
 
   const displayCurrentEventType = () => {
