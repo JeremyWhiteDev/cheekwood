@@ -1,14 +1,5 @@
+import { Footer } from "../footer/Footer";
 import "./AboutUs.css";
-
-// import { loadIcon } from "iconify-icon";
-// /* ----------------------------------------- */
-// const name = "mdi:home";
-// loadIcon(name)
-//     .then((data) => {
-//         console.log("Loaded data for", name);
-//     })
-//     .catch(console.error);
-// /* ----------------------------------------- */
 
 export const AboutUs = () => {
     return (
@@ -135,8 +126,8 @@ export const AboutUs = () => {
                     </div>
                 </section>
             </div>
-
-            <footer>
+            {Footer()}
+           {/*  <footer>
                 <div className="about_border_2">
                     <section className="about_footer">
                         <div id="about_address">
@@ -231,7 +222,7 @@ export const AboutUs = () => {
                         </ul>
                     </section>
                 </div>
-            </footer>
+            </footer> */}
         </>
     );
 };
