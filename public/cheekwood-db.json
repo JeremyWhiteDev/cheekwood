@@ -78,8 +78,8 @@
       "name": "Holiday LIGHTS",
       "summary": "Nashville’s classic holiday tradition.",
       "description": "Features elegant and creative light displays along a one-mile walking path that sets the gardens aglow.",
-      "startDate": "1/1/2022",
-      "endDate": "1/30/2022",
+      "startDate": "2022-01-01",
+      "endDate": "2022-01-30",
       "eventTypeId": 1,
       "linkImage": "https://cheekwood.org/wp-content/uploads/2022/09/NathanZucker_3712-640x959.jpg"
     },
@@ -88,8 +88,8 @@
       "name": "Permanent Collection Galleries",
       "summary": "Cheekwood’s permanent collection galley",
       "description": "Cheekwood’s permanent collection galleries contain paintings, sculptures, and decorative arts from 1875-1940.",
-      "startDate": "2/26/2022",
-      "endDate": "2/30/2022",
+      "startDate": "2022-02-26",
+      "endDate": "2022-02-28",
       "eventTypeId": 2,
       "linkImage": "https://cheekwood.org/wp-content/uploads/2021/01/Cheek-Porcelain-1200x425.jpg"
     },
@@ -98,8 +98,8 @@
       "name": "Member Orientation",
       "summary": "Meet our members and team",
       "description": "Make the most of your membership by joining us for a fun and informative presentation with our Member Services Team!",
-      "startDate": "3/1/2022",
-      "endDate": "3/3/2022",
+      "startDate": "2022-03-01",
+      "endDate": "2022-03-03",
       "eventTypeId": 3,
       "linkImage": "https://cheekwood.org/wp-content/uploads/2022/06/Featureset-4.jpg"
     }
