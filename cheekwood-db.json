@@ -9,7 +9,6 @@
       "type": "patron"
     }
   ],
-
   "users": [
     {
       "id": 1,
@@ -36,25 +35,23 @@
       "userTypeId": 2
     }
   ],
-
   "patronSavedEvents": [
-    {
-      "id": 1,
-      "userId": 2,
-      "eventId": 1
-    },
-    {
-      "id": 2,
-      "userId": 3,
-      "eventId": 2
-    },
     {
       "id": 3,
       "userId": 4,
       "eventId": 3
+    },
+    {
+      "userId": 2,
+      "eventId": 2,
+      "id": 4
+    },
+    {
+      "userId": 2,
+      "eventId": 1,
+      "id": 5
     }
   ],
-
   "patronComments": [
     {
       "id": 1,
@@ -75,7 +72,6 @@
       "comment": "Wonderful sites and excellent Team."
     }
   ],
-
   "events": [
     {
       "id": 1,
@@ -108,7 +104,6 @@
       "linkImage": "https://cheekwood.org/wp-content/uploads/2022/06/Featureset-4.jpg"
     }
   ],
-
   "eventTypes": [
     {
       "id": 1,

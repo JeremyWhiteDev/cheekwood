@@ -1,23 +1,22 @@
 .heroImg {
-    width: 115%;
+    width: 100%;
     margin: 0;
     padding: 0;
-    position: relative;
-    right: 5vh;
     height: 50vh;
-
 }
 
 .linkContainer {
-    margin-top: 20px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    background-color: #00B189;
+    width: 100%;
 }
 
 .linkContainer div {
     position: relative;
-    margin: 10px 0;
+    margin: 10px 5px;
+    padding: 20px 0;
 }
 
 .linkContainer h4 {

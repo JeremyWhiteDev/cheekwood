@@ -1,4 +1,5 @@
 import { Outlet, Route, Routes } from "react-router-dom";
+import { Event } from "../events/Event";
 import "./ApplicationViews.css"
 
 export const ApplicationViews = () => {
@@ -31,14 +32,15 @@ export const ApplicationViews = () => {
             <h4>Profile</h4>
           </div>
         </section>
-        <Outlet />
       </>} >
-        <Route path="/about-us" element={<>about-us </>} />
-        <Route path="/map" element={<>map</>} />
-        <Route path="/events" element={<>EventList</>} />
-        <Route path="/event/:eventId" element={<>Event Details</>} />
-        <Route path="/profile" element={<>Profile</>} />
       </Route>
+
+      <Route path="/about-us" element={<>about-us </>} />
+      <Route path="/map" element={<>map</>} />
+      <Route path="/events" element={<Event />} />
+      <Route path="/event/:eventId" element={<>Event Details</>} />
+      <Route path="/profile" element={<>Profile</>} />
+
 
       {projectUserObject.userType === "employee" ? (
         <>
