@@ -72,7 +72,7 @@ export const EventList = ({}) => {
       }
       {cheekwoodUserObject.userType === "employee" ? (
         <>
-          <button onClick={() => navigate("")}>Edit Event</button>
+          <button onClick={() => navigate("/add-event")}>Add Event</button>
         </>
       ) : (
         <></>
