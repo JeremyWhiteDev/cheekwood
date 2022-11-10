@@ -67,48 +67,48 @@ export const Footer = () => {
                                 </span>
                             </a>
 
-                            <a
-                                target="_blank"
-                                alt="Follow Cheekwood on Instagram"
-                                title="Follow Cheekwood on Instagram"
-                                href="https://www.instagram.com/cheekwood/"
-                            >
-                                <span className="icon">
-                                    <iconify-icon icon="fa-brands:instagram"></iconify-icon>
-                                </span>
-                            </a>
+              <a
+                target="_blank"
+                alt="Follow Cheekwood on Instagram"
+                title="Follow Cheekwood on Instagram"
+                href="https://www.instagram.com/cheekwood/"
+              >
+                <span className="icon">
+                  <iconify-icon icon="fa-brands:instagram"></iconify-icon>
+                </span>
+              </a>
 
-                            <a
-                                target="_blank"
-                                alt="Follow Cheekwood on Snapchat"
-                                title="Follow Cheekwood on Snapchat"
-                                href="https://www.snapchat.com/add/cheekwood"
-                            >
-                                <span className="icon">
-                                    <iconify-icon icon="fa-brands:snapchat-ghost"></iconify-icon>
-                                </span>
-                            </a>
+              <a
+                target="_blank"
+                alt="Follow Cheekwood on Snapchat"
+                title="Follow Cheekwood on Snapchat"
+                href="https://www.snapchat.com/add/cheekwood"
+              >
+                <span className="icon">
+                  <iconify-icon icon="fa-brands:snapchat-ghost"></iconify-icon>
+                </span>
+              </a>
 
-                            <a
-                                target="_blank"
-                                alt="Like Cheekwood on Facebook"
-                                title="Like Cheekwood on Facebook"
-                                href="https://www.facebook.com/CheekwoodNashville/"
-                            >
-                                <span className="icon">
-                                    <iconify-icon icon="fa-brands:facebook-f"></iconify-icon>
-                                </span>
-                            </a>
-                        </ul>
-                        <div>
-                            <p className="copyright">©2022 Nss-Hex-Clan</p>
-                        </div>
-                    </section>
+              <a
+                target="_blank"
+                alt="Like Cheekwood on Facebook"
+                title="Like Cheekwood on Facebook"
+                href="https://www.facebook.com/CheekwoodNashville/"
+              >
+                <span className="icon">
+                  <iconify-icon icon="fa-brands:facebook-f"></iconify-icon>
+                </span>
+              </a>
+            </ul>
+            <div>
+              <p className="copyright">©2022 Nss-Hex-Clan</p>
+            </div>
+          </section>
                     <section className="">
                        
                     </section>
-                </div>
-            </footer>
-        </>
-    );
+        </div>
+      </footer>
+    </>
+  );
 };
