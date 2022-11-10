@@ -15,18 +15,29 @@ export const EventDetails = () => {
     eventType: {},
   });
 
+  const [users, setUsers] = useState([]);
+
   const { eventId } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(
+      const eventResponse = await fetch(
         `http://localhost:8088/events/${eventId}?_expand=eventType&_embed=patronComments`
       );
-      const data = await response.json();
-      setEvent(data);
+      const eventData = await eventResponse.json();
+      const userResponse = await fetch(`http://localhost:8088/users`);
+      const userData = await userResponse.json();
+
+      setEvent(eventData);
+      setUsers(userData);
     };
     fetchData();
   }, []);
+
+  const findUserName = (userId) => {
+    const foundUser = users.find((user) => user.id === userId);
+    return foundUser.fullName;
+  };
 
   return (
     <>
@@ -67,7 +78,7 @@ export const EventDetails = () => {
 
           {event.patronComments.map((comment) => (
             <div key={comment.id} className="comment">
-              <div>User #{comment.userId} commented:</div>
+              <div>{findUserName(comment.userId)} commented:</div>
               {comment.comment}
             </div>
           ))}

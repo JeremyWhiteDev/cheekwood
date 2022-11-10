@@ -31,7 +31,7 @@
     width: 100vw;
     background: linear-gradient(0deg, hsla(147, 42%, 27%, 1) 0%, hsla(158, 21%, 53%, 1) 74%);
     color: whitesmoke !important;
-    box-shadow: 5px 0 10px gray;
+    /* box-shadow: 5px 0 10px gray; */
 }
 
 .event-header-text {
@@ -57,3 +57,10 @@
 }
 
 .bold {font-weight: 600;}
+
+
+.comment {
+    background-color: whitesmoke;
+    padding: 5px 10px;
+    line-height: 1.5;
+}
