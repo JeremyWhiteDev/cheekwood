@@ -1,9 +1,11 @@
+import { FooterIMG } from "./FooterIMG";
 import "./Footer.css";
 export const Footer = () => {
     return (
         <>
             <footer>
                 <div className="about_border_2">
+                <section className="footer_container">
                     <section className="about_footer">
                         <div id="about_address">
                             <h2 className="G_text">Cheekwood</h2>
@@ -48,7 +50,10 @@ export const Footer = () => {
                             </p>
                         </div>
                     </section>
-                    <hr />
+
+                    <FooterIMG />
+</section>
+                    <hr className="hr" />
                     <section className="icons">
                         <ul>
                             <a
@@ -96,8 +101,11 @@ export const Footer = () => {
                             </a>
                         </ul>
                         <div>
-                            <p className="copyright">©2022 Nss Hex-Clan</p>
+                            <p className="copyright">©2022 Nss-Hex-Clan</p>
                         </div>
+                    </section>
+                    <section className="">
+                       
                     </section>
                 </div>
             </footer>

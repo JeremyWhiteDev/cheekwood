@@ -13,7 +13,7 @@ export const Navbar = () => {
         <li className="navBar_item"><Link className="navBar_link" to="">Directions</Link></li>
         <li className="navBar_item"><Link className="navBar_link" to="">Events</Link></li>
         <li className="navBar_item"><Link className="navBar_link" to="">My Events</Link></li>
-        <li className="navBar_item"><Link className="navBar_link" to="">Profile</Link></li>
+        <li className="navBar_item"><Link className="navBar_link" to="/profile">Profile</Link></li>
         {
             localStorage.getItem("project_user")
                 ?
