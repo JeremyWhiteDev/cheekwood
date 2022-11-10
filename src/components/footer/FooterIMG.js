@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
 export const FooterIMG = () => {
     const [photos, setPhotos] = useState([]);
@@ -28,15 +27,13 @@ export const FooterIMG = () => {
                     {photos.map((photo) => {
                         return (
                             <>
-                                <Link to="https://www.instagram.com/cheekwood/">
-                                    {" "}
-                                    <img
-                                        src={photo.Image}
-                                        width="10%"
-                                        height="10%"
-                                        className="footerIMG_image"
-                                    />
-                                </Link>
+                                <img
+                                    src={photo.Image}
+                                    width="10%"
+                                    height="10%"
+                                    className="footerIMG_image"
+                                    key={`photo__${photo.id}`}
+                                />
                             </>
                         );
                     })}
@@ -46,16 +43,4 @@ export const FooterIMG = () => {
     );
 };
 
-/* 
-    <section key={id} className="comment_card">
-                <h2>{eventName}</h2>
-                <p>{myComment}</p>
-*/
 
-/* 
-img
-                    src={link}
-                    width="100%"
-                    height="100%"
-                    className="comment_image"
-*/

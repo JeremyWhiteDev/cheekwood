@@ -1,126 +1,176 @@
 {
-  "userTypes": [
-    {
-      "id": 1,
-      "type": "employee"
-    },
-    {
-      "id": 2,
-      "type": "patron"
-    }
-  ],
+    "userTypes": [
+        {
+            "id": 1,
+            "type": "employee"
+        },
+        {
+            "id": 2,
+            "type": "patron"
+        }
+    ],
 
-  "users": [
-    {
-      "id": 1,
-      "fullName": "Jeremy White",
-      "email": "jwhite@me.com",
-      "userTypeId": 1
-    },
-    {
-      "id": 2,
-      "fullName": "Erica Clayton",
-      "email": "eclayton@me.com",
-      "userTypeId": 2
-    },
-    {
-      "id": 3,
-      "fullName": "Mariana Mena",
-      "email": "mmena@me.com",
-      "userTypeId": 2
-    },
-    {
-      "id": 4,
-      "fullName": "Robert Stroud",
-      "email": "rstroud@me.com",
-      "userTypeId": 2
-    }
-  ],
+    "users": [
+        {
+            "id": 1,
+            "fullName": "Jeremy White",
+            "email": "jwhite@me.com",
+            "userTypeId": 1
+        },
+        {
+            "id": 2,
+            "fullName": "Erica Clayton",
+            "email": "eclayton@me.com",
+            "userTypeId": 2
+        },
+        {
+            "id": 3,
+            "fullName": "Mariana Mena",
+            "email": "mmena@me.com",
+            "userTypeId": 2
+        },
+        {
+            "id": 4,
+            "fullName": "Robert Stroud",
+            "email": "rstroud@me.com",
+            "userTypeId": 2
+        }
+    ],
 
-  "patronSavedEvents": [
-    {
-      "id": 1,
-      "userId": 2,
-      "eventId": 1
-    },
-    {
-      "id": 2,
-      "userId": 3,
-      "eventId": 2
-    },
-    {
-      "id": 3,
-      "userId": 4,
-      "eventId": 3
-    }
-  ],
+    "patronSavedEvents": [
+        {
+            "id": 1,
+            "userId": 2,
+            "eventId": 1
+        },
+        {
+            "id": 2,
+            "userId": 3,
+            "eventId": 2
+        },
+        {
+            "id": 3,
+            "userId": 4,
+            "eventId": 3
+        }
+    ],
 
-  "patronComments": [
-    {
-      "id": 1,
-      "userId": 2,
-      "eventId": 1,
-      "comment": "I loved how pretty the lighting was"
-    },
-    {
-      "id": 2,
-      "userId": 3,
-      "eventId": 2,
-      "comment": "This is a beautiful and very lively gallery."
-    },
-    {
-      "id": 3,
-      "userId": 4,
-      "eventId": 3,
-      "comment": "Wonderful sites and excellent Team."
-    }
-  ],
+    "patronComments": [
+        {
+            "id": 1,
+            "userId": 2,
+            "eventId": 1,
+            "comment": "I loved how pretty the lighting was"
+        },
+        {
+            "id": 2,
+            "userId": 3,
+            "eventId": 2,
+            "comment": "This is a beautiful and very lively gallery."
+        },
+        {
+            "id": 3,
+            "userId": 4,
+            "eventId": 3,
+            "comment": "Wonderful sites and excellent Team."
+        }
+    ],
 
-  "events": [
-    {
-      "id": 1,
-      "name": "Holiday LIGHTS",
-      "summary": "Nashville’s classic holiday tradition.",
-      "description": "Features elegant and creative light displays along a one-mile walking path that sets the gardens aglow.",
-      "startDate": "1/1/2022",
-      "endDate": "1/30/2022",
-      "eventTypeId": 1,
-      "linkImage": "https://cheekwood.org/wp-content/uploads/2022/09/NathanZucker_3712-640x959.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Permanent Collection Galleries",
-      "summary": "Cheekwood’s permanent collection galley",
-      "description": "Cheekwood’s permanent collection galleries contain paintings, sculptures, and decorative arts from 1875-1940.",
-      "startDate": "2/26/2022",
-      "endDate": "2/30/2022",
-      "eventTypeId": 2,
-      "linkImage": "https://cheekwood.org/wp-content/uploads/2021/01/Cheek-Porcelain-1200x425.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Member Orientation",
-      "summary": "Meet our members and team",
-      "description": "Make the most of your membership by joining us for a fun and informative presentation with our Member Services Team!",
-      "startDate": "3/1/2022",
-      "endDate": "3/3/2022",
-      "eventTypeId": 3,
-      "linkImage": "https://cheekwood.org/wp-content/uploads/2022/06/Featureset-4.jpg"
-    }
-  ],
+    "events": [
+        {
+            "id": 1,
+            "name": "Holiday LIGHTS",
+            "summary": "Nashville’s classic holiday tradition.",
+            "description": "Features elegant and creative light displays along a one-mile walking path that sets the gardens aglow.",
+            "startDate": "1/1/2022",
+            "endDate": "1/30/2022",
+            "eventTypeId": 1,
+            "linkImage": "https://cheekwood.org/wp-content/uploads/2022/09/NathanZucker_3712-640x959.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Permanent Collection Galleries",
+            "summary": "Cheekwood’s permanent collection galley",
+            "description": "Cheekwood’s permanent collection galleries contain paintings, sculptures, and decorative arts from 1875-1940.",
+            "startDate": "2/26/2022",
+            "endDate": "2/30/2022",
+            "eventTypeId": 2,
+            "linkImage": "https://cheekwood.org/wp-content/uploads/2021/01/Cheek-Porcelain-1200x425.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Member Orientation",
+            "summary": "Meet our members and team",
+            "description": "Make the most of your membership by joining us for a fun and informative presentation with our Member Services Team!",
+            "startDate": "3/1/2022",
+            "endDate": "3/3/2022",
+            "eventTypeId": 3,
+            "linkImage": "https://cheekwood.org/wp-content/uploads/2022/06/Featureset-4.jpg"
+        }
+    ],
 
-  "eventTypes": [
-    {
-      "id": 1,
-      "type": "Event"
-    },
-    {
-      "id": 2,
-      "type": "Exhibitions"
-    },
-    {
-      "id": 3,
-      "type": "Member Events"
-    }
-  ]
+    "eventTypes": [
+        {
+            "id": 1,
+            "type": "Event"
+        },
+        {
+            "id": 2,
+            "type": "Exhibitions"
+        },
+        {
+            "id": 3,
+            "type": "Member Events"
+        }
+    ],
+    "instagramImages":[
+      {
+        "id":1,
+        "Image":"https://www.artfixdaily.com//images/sd/48/eb/Cheekwood_Chihuly_Fiori_Boat.jpg"
+      },
+      {
+        "id":2,
+        "Image":"https://cheekwood.org/wp-content/uploads/2021/12/DSC3706_CaitlinHarris-2-640x426.jpg"
+      },
+      {
+        "id":3,
+        "Image":"https://unified.visitmusiccity.com/content/cms/businessImages/5465_Cheekwood%20tulips%20in%20front%20of%20Mansion.jpg"
+      },
+      {
+        "id":4,
+        "Image":"https://cheekwood.org/wp-content/uploads/2017/08/CheekwoodHarvest-6815-scaled-e1630443136283.jpg"
+      },
+      {
+        "id":5,
+        "Image":"https://www.trolleytours.com/wp-content/uploads/2016/07/nashville-cheekwood-estate-garden.jpg"
+      },
+      {
+        "id":6,
+        "Image":"https://upload.wikimedia.org/wikipedia/commons/a/a8/WTN_PeepHoles_082.JPG"
+      },
+      {
+        "id":7,
+        "Image":"https://cheekwood.org/wp-content/themes/cheekwood/images/cta-gardens.jpg"
+      },
+      {
+        "id":8,
+        "Image":"https://d3emaq2p21aram.cloudfront.net/media/cache/venue_carousel/uploads/2016/06/cheekwood-30.jpg"
+      },
+      {
+        "id":9,
+        "Image":"https://cdn.wedding-spot.com/images/venues/6446/Cheekwood-Botanical-Garden-&-Museum-of-Art-wedding-Nashville-TN-207725-orig.jpg"
+      },
+      {
+        "id":10,
+        "Image":"https://www.3frommedesign.com/art/children_cheekwood/2.jpg"
+      },
+      {
+        "id":11,
+        "Image":"https://images.hornblower.com/1200x840/images/tours/trusted/96f6dd6d-69ef-4a75-beb0-332233d8b7ab.jpeg"
+      },
+      {
+        "id":12,
+        "Image":"https://nashvillelifestyles.com/downloads/33898/download/0006_Cheekwood_05_2010_PA_High-res%20JPEG%20_not%20resized_.jpg?cb=fbb78b4ada1b457085d6b4e5f9edac77&w=1500"
+      }
+    ]
 }

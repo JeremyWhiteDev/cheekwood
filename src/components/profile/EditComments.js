@@ -1,39 +1,3 @@
-// import React, { Component } from 'react'
-// //import EdiText from 'react-editext'
-
-// export default class App extends Component {
-//   onSave = val => {
-//     console.log('Edited Value -> ', val)
-//   }
-
-//   render () {
-//     return (
-//       <EdiText
-//         type='text'
-//         value='What is real? How do you define real?'
-//         onSave={this.onSave}
-//       />
-//     )
-//   }
-// }
-/* ---------------------------------- */
-/* import { useState } from "react";
-
-export const CommentEdit = ({ commentObject }) => {
-    const [textarea, setTextarea] = useState(`${commentObject.comment}`);
-
-    const handleChange = (event) => {
-        setTextarea(event.target.value);
-    };
-
-    return (
-        <form>
-            <textarea value={textarea} onChange={handleChange} />
-        </form>
-    );
-}; */
-
-/* ----------------------------------- */
 
 import { useEffect, useState } from "react";
 

@@ -60,7 +60,7 @@ export const Comment = ({
 
     return (
         <>
-            <section key={id} className="comment_card">
+            <section key={`comment__${id}`} className="comment_card">
                 <h2>{eventName}</h2>
                 <p>{myComment}</p>
                 <img
