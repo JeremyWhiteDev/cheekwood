@@ -1,0 +1,42 @@
+.profile_form {
+    max-width: 30rem;
+    border: 1px solid #286142;
+    background-color:#f0eded; ;
+    border-radius: 5px;
+    margin:20px 50px;
+    padding: 20px;
+    box-shadow: #bbc9c1 1px 1px;
+}
+
+.btn{
+padding: 5px 20px;
+font-size: medium;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: lighter;
+color: #286142;
+}
+/* ------------- */
+
+.comment_form {
+    max-width: 30rem;
+    border: 1px solid #286142;
+    
+    border-radius: 5px;
+    margin: 20px 50px ;
+    padding: 20px;
+    box-shadow: #bbc9c1 1px 1px;
+}
+
+.comment_card{
+    max-width: 30rem;
+    border: 1px solid #286142;
+    background-color:#f0eded; ;
+    border-radius: 5px;
+    margin: 10px 10px ;
+    padding: 20px;
+    box-shadow: #bbc9c1 1px 1px;
+}
+.comment_image{
+height:200px;
+margin:10px 0px ;
+}

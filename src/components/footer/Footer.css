@@ -1,7 +1,8 @@
 .about_border_2 {
     margin-bottom: 0rem;
+    padding-bottom: 0;
     background-color: #041C0D;
-    height:20rem;
+    /* height:20rem; */
     width:100vmax;
 }
 h2{
@@ -21,10 +22,12 @@ h2{
 }
 .about_footer{
 padding: 2rem;
+margin-right: 3rem;
+
 }
 .icon{
     color:#A9A9A9;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding: 0.5rem;
 }
 .icons{
@@ -38,6 +41,50 @@ padding: 2rem;
     color:#A9A9A9;
     font-size: 0.9rem;
     padding: 0.5rem;
-    margin-bottom: 6px;
-    height: 10rem;
+    
+   /*  height: 10rem; */
 }
+
+/* ------------- */
+
+/* .footerIMG_form {
+    max-width: 30rem;
+    border: 1px solid #286142;
+    
+    border-radius: 5px;
+    margin: 20px 50px ;
+    padding: 20px;
+    box-shadow: #bbc9c1 1px 1px;
+} */
+
+.footerIMG_container {
+
+    max-width: 40rem;
+    max-height: 13rem;
+    margin:2rem;
+    overflow: hidden;
+  /*    background-color:#f0eded; ;
+    border-radius: 5px;
+    margin: 10px 10px ;
+    padding: 20px;
+    box-shadow: #bbc9c1 1px 1px; */
+
+}
+.footerIMG_image{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+height:5rem;
+width:7rem;
+margin:1px;
+
+}
+
+.footer_container{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+
+.hr{color:#A9A9A9}
