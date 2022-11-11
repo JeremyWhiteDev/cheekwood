@@ -17,16 +17,18 @@ export const Map = () => {
             </section>
 
             <section className="map_logo">
-                <div>
-                    <a href="https://cheekwood.org/visit/cheekwood-map/">
+                
+                <a
+                    className="map_link"
+                    href="https://cheekwood.org/visit/cheekwood-map/">
                         <img
                             src="https://cheekwood.org/wp-content/themes/cheekwood/images/default.jpg"
                             className="map_image"
-                            width="30%"
-                            height="30%"
+                            width="100%"
+                            height="100%"
                         />
                     </a>
-                </div>
+            
 
                 <h2>
                     <a

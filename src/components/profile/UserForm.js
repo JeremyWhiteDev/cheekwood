@@ -10,6 +10,7 @@ export const UserForm = () => {
     const localCheekwoodUser = localStorage.getItem("project_user");
     const cheekwoodUserObject = JSON.parse(localCheekwoodUser);
     /* -------------Display-------------- */
+    
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(
@@ -47,53 +48,53 @@ export const UserForm = () => {
 
     return (
         <fieldset className="profile_form">
-        <form className="profile">
-            <h2 className="profile__title">Edit Patron Data:</h2>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="fullName">Name:</label>
-                    <input
-                        required
-                        autoFocus
-                        type="text"
-                        className="form-control"
-                        value={profile.fullName}
-                        onChange={(evt) => {
-                            const copy = { ...profile };
-                            copy.fullName = evt.target.value;
-                            updateProfile(copy);
-                        }}
-                    />
-                </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        className="form-control"
-                        value={profile.email}
-                        onChange={(evt) => {
-                            const copy = { ...profile };
-                            copy.email = evt.target.value;
-                            updateProfile(copy);
-                        }}
-                    />
-                </div>
-            </fieldset>
-            <button
-                onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                className="btn btn-primary"
-            >
-                Save Profile
+            <form className="profile">
+                <h2 className="profile__title">Edit Patron Data:</h2>
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="fullName">Name:</label>
+                        <input
+                            required
+                            autoFocus
+                            type="text"
+                            className="form-control"
+                            value={profile.fullName}
+                            onChange={(evt) => {
+                                const copy = { ...profile };
+                                copy.fullName = evt.target.value;
+                                updateProfile(copy);
+                            }}
+                        />
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <div className="form-group">
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            type="email"
+                            className="form-control"
+                            value={profile.email}
+                            onChange={(evt) => {
+                                const copy = { ...profile };
+                                copy.email = evt.target.value;
+                                updateProfile(copy);
+                            }}
+                        />
+                    </div>
+                </fieldset>
+                <button
+                    onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+                    className="btn btn-primary"
+                >
+                    Save Profile
                 </button>
                 <button
-                onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
-                className="btn btn-primary"
-            >
-                Delete Account
-            </button>
+                    onClick={(clickEvent) => handleSaveButtonClick(clickEvent)}
+                    className="btn btn-primary"
+                >
+                    Delete Account
+                </button>
             </form>
-            </fieldset>
+        </fieldset>
     );
 };
