@@ -115,7 +115,9 @@
     background-color: rgb(54, 121, 97);
     color: whitesmoke;
     border-radius: 14px;
-    border: none
+    border: none;
+    display: inline-flex;
+    align-items: center;
 }
 
 .event-btn:hover {
@@ -127,6 +129,10 @@
     font-weight: 700;
 }
 
+.save-btn {
+    width: 9rem;
+}
+
 .comment-field {
     padding: 10px 20px;
     margin: 5px 10px;
@@ -135,3 +141,28 @@
     font-size: large;
     display: block;
 }
+
+.svg-m {
+
+    margin-right: 10px;
+}
+
+.svg-saved {
+    /* display: block; */
+    
+    fill: rgb(255, 75, 75);
+}
+
+.svg-not-saved {
+    fill: rgb(182, 182, 182);
+
+}
+
+.button-options {
+    display: flex;
+    max-width: 400px;
+    align-items: center;
+    /* gap: 10px; */
+    justify-content: space-between;
+}
+

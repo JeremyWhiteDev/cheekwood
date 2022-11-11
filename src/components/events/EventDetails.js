@@ -15,6 +15,8 @@ export const EventDetails = () => {
     eventType: {},
   });
 
+  const [saved, setSaved] = useState(false);
+
   const [users, setUsers] = useState([]);
   const [commentIsOpen, setCommentOpen] = useState(false);
 
@@ -71,8 +73,33 @@ export const EventDetails = () => {
       <article className="event-details-container">
         <section className="event-description">
           <p>{event.description}</p>
-          <div className="button-options">
-            <button className="event-btn">Favorite</button>
+          <div className="button-options ">
+            <button
+              className="event-btn save-btn"
+              onClick={() => setSaved(!saved)}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className={`svg-m ${saved ? "svg-saved" : "svg-not-saved"}`}
+                version="1.1"
+                viewBox="276 230 183 200"
+                width="21"
+                height="21"
+              >
+                <path
+                  d="M 366 286.125 C 342.7515 234.41842 276.84905 246.2882 276.5 306.12498 C 276.15095 339.78296 307.96462 351.65108 328.94163 364.9844 C 349.21875 377.82987 363.9021 395.39062 366 402.54513 C 368.0979 395.39062 384.17924 377.1805 403.05837 364.33504 C 423.68633 350.1892 455.84905 338.80726 455.5 306.12498 C 455.15095 245.80036 388.02595 236.2083 366 286.125 Z"
+                  fill="current"
+                />
+                <path
+                  d="M 366 286.125 C 342.7515 234.41842 276.84905 246.2882 276.5 306.12498 C 276.15095 339.78296 307.96462 351.65108 328.94163 364.9844 C 349.21875 377.82987 363.9021 395.39062 366 402.54513 C 368.0979 395.39062 384.17924 377.1805 403.05837 364.33504 C 423.68633 350.1892 455.84905 338.80726 455.5 306.12498 C 455.15095 245.80036 388.02595 236.2083 366 286.125 Z"
+                  stroke="gray"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="4"
+                />
+              </svg>
+              {saved ? "Saved" : "Save"}
+            </button>
             <button
               className="event-btn"
               onClick={() => {
