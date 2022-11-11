@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./EventDetails.css";
 
 export const EventDetails = () => {
@@ -16,8 +16,11 @@ export const EventDetails = () => {
   });
 
   const [users, setUsers] = useState([]);
+  const [commentIsOpen, setCommentOpen] = useState(false);
 
   const { eventId } = useParams();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -66,19 +69,51 @@ export const EventDetails = () => {
         </div>
       </section>
       <article className="event-details-container">
+        <section className="event-description">
+          <p>{event.description}</p>
+          <div className="button-options">
+            <button className="event-btn">Favorite</button>
+            <button
+              className="event-btn"
+              onClick={() => {
+                navigate("/events");
+              }}
+            >
+              Back to Events
+            </button>
+          </div>
+        </section>
         <div className="event-info-section">
           <img className="event-details-img" src={event.linkImage}></img>
-
-          <section>
-            <p>{event.description}</p>
-          </section>
         </div>
         <section className="comment-list">
           <div className="mb-1 xl bold">Join the Conversation:</div>
 
+          {commentIsOpen ? (
+            <>
+              <input id="commentField" className="comment-field" autoFocus />
+              <button className="comment-btn">Submit</button>
+              <button
+                className="comment-btn"
+                onClick={() => setCommentOpen(false)}
+              >
+                Cancel
+              </button>
+            </>
+          ) : (
+            <button
+              className=" comment-btn show-comment-btn"
+              onClick={() => {
+                setCommentOpen(!commentIsOpen);
+              }}
+            >
+              Add Comment
+            </button>
+          )}
+
           {event.patronComments.map((comment) => (
             <div key={comment.id} className="comment">
-              <div>{findUserName(comment.userId)} commented:</div>
+              <div className="user-name">{findUserName(comment.userId)}</div>
               {comment.comment}
             </div>
           ))}
