@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700|Libre+Baskerville|News+Cycle");
 
 .navBar {
+
     display: flex;
     justify-content: center;
-    align-items: center;
     padding: 1vh 0;
     list-style: none;
     text-align: right;
@@ -11,25 +11,42 @@
     text-transform: uppercase;
     position: fixed;
     width: 100%;
-    height: 110px;
-    top: -18px;
+    height: 120px;
+    top: -16px;
     background-color: white;
     z-index: 99;
     border-bottom: #00B189 solid 3px;
 }
 
+.navBar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    position: relative;
+    bottom: 10px;
+    padding-top: 2vh;
+}
+
+.navBar li {
+    width: 145px;
+    text-align: center;
+}
+
 .navBar a {
     text-decoration: none;
     color: #2D1A02;
-    padding: 0 3vh
+    padding: 0 3vh;
+
 }
 
 .logo {
     margin: 1vh;
-    width: 22vh;
+    width: 145px;
     padding-right: 5vh;
     position: relative;
-    top: 0.2vh;
+    top: 0.9vh;
 }
 
 .navSpacer {

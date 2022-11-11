@@ -10,7 +10,6 @@ export const Event = () => {
     const projectUserObject = JSON.parse(localUser);
 
     const [events, setEvents] = useState([])
-    const [savedEvents, setSavedEvents] = useState([])
     const [patronComments, setPatronComments] = useState([])
     const [favorited, setFavorited] = useState(false)
 
@@ -23,18 +22,6 @@ export const Event = () => {
             }
             fetchPatronComments()
         }, []
-    )
-
-
-    useEffect(
-        () => {
-            const fetchSavedEvents = async () => {
-                const fetchData = await fetch(`http://localhost:8088/patronSavedEvents?_expand=event`)
-                const fetchJson = await fetchData.json()
-                setSavedEvents(fetchJson)
-            }
-            fetchSavedEvents()
-        }, [, favorited]
     )
 
     useEffect(
@@ -50,8 +37,8 @@ export const Event = () => {
     )
 
     const countFavorites = (obj) => {
-        const copy = savedEvents.map(x => ({ ...x }))
-        return copy.filter(x => x.eventId === obj.id)
+        const copy = obj.patronSavedEvents.map(x => ({ ...x }))
+        return copy
     }
 
     const countComments = (obj) => {
@@ -62,9 +49,7 @@ export const Event = () => {
 
     const postOrDelete = async (favorite) => {
         if (favorite.patronSavedEvents.filter(x => x.userId === projectUserObject.id).length > 0) {
-
             await deleteFavorite(favorite.patronSavedEvents.filter(x => x.userId === projectUserObject.id)[0].id)
-
         } else {
             const favObj = {
                 userId: projectUserObject.id,
@@ -72,6 +57,8 @@ export const Event = () => {
             }
             await postFavorite(favObj)
         }
+
+        setFavorited(!favorited)
     }
 
 
@@ -83,6 +70,7 @@ export const Event = () => {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(favorite)
         })
+
         setFavorited(!favorited)
     }
 
@@ -108,14 +96,16 @@ export const Event = () => {
                             </ul>
                             <div className="allTheButtons">
                                 <div className="favoriteAndComment">
-                                    <div className="favorites">
+                                    <div className={event.patronSavedEvents.filter(x => x.userId === projectUserObject.id).length > 0 ? " favorites favorited" : "favorites "}
+
+                                        id={`heartIcon--${event.id}`}>
                                         <a href="#"><img src={require("./images/favorite.png")}
                                             className="button"
                                             onClick={
                                                 () => {
 
                                                     postOrDelete(event)
-                                                    setFavorited(!favorited)
+
 
                                                 }
                                             } /></a>

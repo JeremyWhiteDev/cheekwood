@@ -7,6 +7,7 @@
 }
 
 .eventCard {
+    padding: 25px 0;
     margin: 10px 10px;
     border-top: #00B189 solid 1px;
     width: 50%;
@@ -23,15 +24,17 @@
         flex-direction: column-reverse;
     }
 
-    .eventHeader {
-        margin-left: -30px;
-    }
-
     .editAndViewButtons {
         position: absolute;
         left: 260px;
-        top: 135px;
+        top: 122px;
     }
+
+    .favoriteAndComment {
+        position: absolute;
+        top: 255px;
+    }
+
 }
 
 .eventHeader li {
@@ -57,7 +60,8 @@
 .eventImg {
     width: 250px;
     height: 200px;
-    margin: 5px;
+    margin: 15px 10px 0 0;
+
 }
 
 .allTheButtons {
@@ -138,23 +142,37 @@
 }
 
 
+
+.favorites img {
+    filter: hue-rotate(0deg) grayscale(99%);
+    position: relative;
+}
+
+.favorited img {
+    filter: hue-rotate(0deg) grayscale(0%)
+}
+
 .counter {
-    border: solid 2px white;
+    border: solid 1.5px #00B189;
     border-radius: 100%;
     text-align: center;
-    width: 30px;
-    height: 26px;
-    padding-top: 4px;
+    width: fit-content;
+    height: fit-content;
+    padding: 2px 5px 2px 5px;
+    font-size: 11px;
     font-weight: bold;
+    position: relative;
+    right: 9.5px;
+    bottom: 5px;
 }
 
 .commentCounter {
     background-color: #01AEEF;
-    box-shadow: 0px 0px 0px 2px #01AEEF;
+    /* box-shadow: 0px 0px 0px 2px #01AEEF; */
 }
 
 .favCounter {
     background-color: #DD4346;
-    box-shadow: 0px 0px 0px 2px #DD4346;
+    /* box-shadow: 0px 0px 0px 2px #DD4346; */
 
 }
