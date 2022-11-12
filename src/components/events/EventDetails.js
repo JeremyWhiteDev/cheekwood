@@ -31,7 +31,7 @@ export const EventDetails = () => {
     const savedEventJson = await patronSavedResponse.json();
     if (savedEventJson.length > 0) {
       setSavedEvent(savedEventJson[0]);
-      console.log(savedEvent);
+      //   console.log(savedEvent);
       setSaved(true);
     } else {
       setSaved(false);

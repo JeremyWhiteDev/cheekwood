@@ -44,15 +44,18 @@ export const CommentList = () => {
 
   const getEventComments = async () => {
     console.log(commentPageNumber);
-    const response = await fetch(
+    const commentResponse = await fetch(
       `http://localhost:8088/patronComments?eventId=${parseInt(
         eventId
       )}&_sort=id&_order=desc&_page=${commentPageNumber.currentPage}&_limit=5`
     );
-    const data = await response.json();
-    console.log(data);
-    const newData = patronComments.concat(data);
-    setPatronComments(newData);
+    const commentData = await commentResponse.json();
+    // console.log(commentData);
+
+    if (commentData.length > 0) {
+      const newData = patronComments.concat(commentData);
+      setPatronComments(newData);
+    }
   };
   useEffect(() => {
     getEventComments();
@@ -73,6 +76,12 @@ export const CommentList = () => {
       body: JSON.stringify(userCommentCopy),
     });
     setCommentOpen(false);
+    setPatronComments([]);
+    setUserComment({
+      userId: 0,
+      comment: "",
+      eventId: 0,
+    });
     setCommentPage({ currentPage: 1 });
   };
 
@@ -132,15 +141,17 @@ export const CommentList = () => {
             </div>
           </div>
         ))}
-        {/* <button
+        <button
           className="comment-btn show-comment-btn"
-          onClick={async (event) => {
-            // setCommentPage((prev) => prev.currentPage + 1);
-            addComment(event);
+          onClick={(event) => {
+            const prevObj = { ...commentPageNumber };
+            prevObj.currentPage += 1;
+            setCommentPage(prevObj);
+            // addComment(event);
           }}
         >
           Show More Comments
-        </button> */}
+        </button>
       </section>
     </>
   );
