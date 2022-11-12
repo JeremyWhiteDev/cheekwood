@@ -22,19 +22,16 @@ export const FooterIMG = () => {
       <section>
         <article className="footerIMG_container">
           <h2 className="icon">from our instagram</h2>
-          {photos.map((photo) => {
-            return (
-              <>
-                <img
-                  key={`photo__${photo.id}`}
-                  src={photo.Image}
-                  width="10%"
-                  height="10%"
-                  className="footerIMG_image"
-                />
-              </>
-            );
-          })}
+          {photos.map((photo) => (
+            <img
+              key={`photo__${photo.id}`}
+              src={photo.Image}
+              width="10%"
+              height="10%"
+              className="footerIMG_image"
+            />
+          ))}
+          ;
         </article>
       </section>
     </>
