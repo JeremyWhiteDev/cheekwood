@@ -1,7 +1,8 @@
 
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-export const CommentEdit = ({ commentObject, currentUser,myComment,id }) => {
+export const CommentEdit = ({ commentObject, currentUser, myComment, id }) => {
     const [editCommentM, updateEditComment] = useState({
         comment: "",
     });
