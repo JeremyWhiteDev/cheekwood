@@ -56,7 +56,6 @@ export const CommentList = () => {
       },
       body: JSON.stringify(userCommentCopy),
     });
-    const jsonResponse = await commentRespone.json();
     setCommentOpen(false);
     getEventComments();
   };
@@ -104,12 +103,12 @@ export const CommentList = () => {
         )}
 
         {patronComments.map((comment) => (
-          <div className="single-comment">
+          <div className="single-comment" key={comment.id}>
             <img
               className="comment-avatar"
               src="https://ionicframework.com/docs/img/demos/avatar.svg"
             ></img>
-            <div key={comment.id} className="comment">
+            <div className="comment">
               <div className="user-name">{findUserName(comment.userId)}</div>
               {comment.comment}
             </div>
