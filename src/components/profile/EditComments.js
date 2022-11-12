@@ -50,7 +50,7 @@ export const CommentEdit = ({ commentObject, currentUser,myComment,id }) => {
     /* ------------------------------ */
     return (
         <>
-            <label htmlFor="comment">Comment:</label>
+            {/* <label htmlFor="comment">Comment:</label> */}
             
             <input
                 required
