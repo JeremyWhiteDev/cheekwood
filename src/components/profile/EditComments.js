@@ -11,8 +11,8 @@ export const CommentEdit = ({ commentObject, currentUser,myComment,id }) => {
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(
-                `http://localhost:8088/patronComments/${commentObject.id}`
-                //`http://localhost:8088/patronComments?/userId=${commentObject.userId} `
+                //`http://localhost:8088/patronComments/${commentObject.id}`
+                `http://localhost:8088/patronComments?&userId=${currentUser.id} `
             );
             const data = await response.json();
             //console.log(data);
