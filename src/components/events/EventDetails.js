@@ -139,9 +139,15 @@ export const EventDetails = () => {
           )}
 
           {event.patronComments.map((comment) => (
-            <div key={comment.id} className="comment">
-              <div className="user-name">{findUserName(comment.userId)}</div>
-              {comment.comment}
+            <div className="single-comment">
+              <img
+                className="comment-avatar"
+                src="https://ionicframework.com/docs/img/demos/avatar.svg"
+              ></img>
+              <div key={comment.id} className="comment">
+                <div className="user-name">{findUserName(comment.userId)}</div>
+                {comment.comment}
+              </div>
             </div>
           ))}
         </section>

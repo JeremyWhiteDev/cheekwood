@@ -75,9 +75,10 @@
     margin: 5px 10px;
     line-height: 1.5;
     /* width: 100%; */
-    min-width: 600px;
+    min-width: 500px;
     border-radius: 14px;
     box-sizing: border-box;
+    display: inline-block;
    
 }
 .comment-btn {
@@ -166,3 +167,9 @@
     justify-content: space-between;
 }
 
+.comment-avatar {
+    width: 50px;
+    border-radius: 50px;
+    display: inline-block;
+margin-left: 15px;
+}
