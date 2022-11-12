@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { CommentList } from "./CommentList";
 import "./EventDetails.css";
 
 export const EventDetails = () => {
@@ -14,11 +15,7 @@ export const EventDetails = () => {
     patronComments: [],
     eventType: {},
   });
-
   const [saved, setSaved] = useState(false);
-
-  const [users, setUsers] = useState([]);
-  const [commentIsOpen, setCommentOpen] = useState(false);
 
   const { eventId } = useParams();
 
@@ -30,19 +27,11 @@ export const EventDetails = () => {
         `http://localhost:8088/events/${eventId}?_expand=eventType&_embed=patronComments`
       );
       const eventData = await eventResponse.json();
-      const userResponse = await fetch(`http://localhost:8088/users`);
-      const userData = await userResponse.json();
 
       setEvent(eventData);
-      setUsers(userData);
     };
     fetchData();
   }, []);
-
-  const findUserName = (userId) => {
-    const foundUser = users.find((user) => user.id === userId);
-    return foundUser.fullName;
-  };
 
   return (
     <>
@@ -113,44 +102,7 @@ export const EventDetails = () => {
         <div className="event-info-section">
           <img className="event-details-img" src={event.linkImage}></img>
         </div>
-        <section className="comment-list">
-          <div className="mb-1 xl bold">Join the Conversation:</div>
-
-          {commentIsOpen ? (
-            <>
-              <input id="commentField" className="comment-field" autoFocus />
-              <button className="comment-btn">Submit</button>
-              <button
-                className="comment-btn"
-                onClick={() => setCommentOpen(false)}
-              >
-                Cancel
-              </button>
-            </>
-          ) : (
-            <button
-              className=" comment-btn show-comment-btn"
-              onClick={() => {
-                setCommentOpen(!commentIsOpen);
-              }}
-            >
-              Add Comment
-            </button>
-          )}
-
-          {event.patronComments.map((comment) => (
-            <div className="single-comment">
-              <img
-                className="comment-avatar"
-                src="https://ionicframework.com/docs/img/demos/avatar.svg"
-              ></img>
-              <div key={comment.id} className="comment">
-                <div className="user-name">{findUserName(comment.userId)}</div>
-                {comment.comment}
-              </div>
-            </div>
-          ))}
-        </section>
+        <CommentList />
       </article>
     </>
   );
