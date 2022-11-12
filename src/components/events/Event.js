@@ -2,16 +2,17 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Events.css"
 
-export const Event = () => {
+export const Event = ({ image,
+    name, startDate, endDate, summary, patronSavedEvent, id, fetchEvents, events2, fetchEvents2 }) => {
 
     const navigate = useNavigate()
 
     const localUser = localStorage.getItem("project_user");
     const projectUserObject = JSON.parse(localUser);
 
-    const [events, setEvents] = useState([])
+
     const [patronComments, setPatronComments] = useState([])
-    const [favorited, setFavorited] = useState(false)
+
 
     useEffect(
         () => {
@@ -24,44 +25,36 @@ export const Event = () => {
         }, []
     )
 
-    useEffect(
-        () => {
-            const fetchEvent = async () => {
-                const fetchData = await fetch(`http://localhost:8088/events?_embed=patronSavedEvents&_expand=eventType`)
-                const fetchJson = await fetchData.json()
-                setEvents(fetchJson)
-            }
-            fetchEvent()
-        },
-        [, favorited]
-    )
-
-    const countFavorites = (obj) => {
-        const copy = obj.patronSavedEvents.map(x => ({ ...x }))
+    const countFavorites = () => {
+        const copy = filterEvents2[0].patronSavedEvents.map(x => ({ ...x }))
         return copy
     }
 
-    const countComments = (obj) => {
+    const countComments = () => {
         const copy = patronComments.map(x => ({ ...x }))
-        return copy.filter(x => x.eventId === obj.id).length
+        return copy.filter(x => x.eventId === id).length
     }
 
 
-    const postOrDelete = async (favorite) => {
-        if (favorite.patronSavedEvents.filter(x => x.userId === projectUserObject.id).length > 0) {
-            await deleteFavorite(favorite.patronSavedEvents.filter(x => x.userId === projectUserObject.id)[0].id)
-        } else {
-            const favObj = {
-                userId: projectUserObject.id,
-                eventId: favorite.id
+    const postOrDelete = async (event) => {
+        event.preventDefault()
+        if (filterEvents2[0]?.patronSavedEvents === undefined) { return "" } else {
+            if (filterEvents2[0].patronSavedEvents.filter(x => x.userId === projectUserObject.id).length > 0) {
+                await deleteFavorite(filterEvents2[0].patronSavedEvents.filter(x => x.userId === projectUserObject.id)[0].id)
+            } else {
+                const favObj = {
+                    userId: projectUserObject.id,
+                    eventId: id
+                }
+                await postFavorite(favObj)
             }
-            await postFavorite(favObj)
+            fetchEvents2()
         }
 
-        setFavorited(!favorited)
     }
 
-
+    const mapEvents2 = events2.map(x => ({ ...x }))
+    const filterEvents2 = mapEvents2.filter(x => x.id === id)
 
     const postFavorite = async (favorite) => {
 
@@ -71,7 +64,6 @@ export const Event = () => {
             body: JSON.stringify(favorite)
         })
 
-        setFavorited(!favorited)
     }
 
     const deleteFavorite = async (favorite) => {
@@ -83,42 +75,42 @@ export const Event = () => {
 
 
     return <>
-        <div className="eventCardContainer">{events.map(event => {
-            return <>
+        {filterEvents2[0]?.patronSavedEvents === undefined ? <></> :
+            <div className="eventCardContainer">
                 <section className="eventCard">
                     <div className="cardDetails">
-                        <img src={event.linkImage} alt="" className="eventImg" />
+                        <img src={image} alt="" className="eventImg" />
                         <header className="eventHeader">
                             <ul>
-                                <li className="eventName">{event.name}</li>
-                                <li className="eventDates">{event.startDate} - {event.endDate}</li>
-                                <li className="summary">{event.summary}</li>
+                                <li className="eventName">{name}</li>
+                                <li className="eventDates">{startDate} - {endDate}</li>
+                                <li className="summary">{summary}</li>
                             </ul>
                             <div className="allTheButtons">
                                 <div className="favoriteAndComment">
-                                    <div className={event.patronSavedEvents.filter(x => x.userId === projectUserObject.id).length > 0 ? " favorites favorited" : "favorites "}
+                                    <div className={filterEvents2[0].patronSavedEvents.filter(x => x.userId === projectUserObject.id).length > 0 ? " favorites favorited" : "favorites "}
 
-                                        id={`heartIcon--${event.id}`}>
-                                        <a href="#"><img src={require("./images/favorite.png")}
+                                        id={`heartIcon--${id}`}>
+                                        <a href="#"><img src={require("./event-images/favorite.png")}
                                             className="button"
                                             onClick={
-                                                () => {
+                                                (clickEvent) => {
 
-                                                    postOrDelete(event)
+                                                    postOrDelete(clickEvent)
 
 
                                                 }
                                             } /></a>
-                                        <div className="counter favCounter">{countFavorites(event).length}</div>
+                                        <div className="counter favCounter">{countFavorites().length}</div>
                                     </div>
                                     <div className="comments">
-                                        <a href="#"><img src={require("./images/comment-box.png")}
+                                        <a href="#"><img src={require("./event-images/comment-box.png")}
                                             className="button" onClick={
                                                 () => {
                                                     navigate("/")
                                                 }
                                             } /></a>
-                                        <div className="counter commentCounter">{countComments(event)}</div></div>
+                                        <div className="counter commentCounter">{countComments()}</div></div>
                                 </div>
                                 <div className="editAndViewButtons">
                                     {projectUserObject.userType === "employee" ? <button
@@ -136,16 +128,8 @@ export const Event = () => {
                                 </div>
                             </div>
                         </header>
-
-
-
                     </div>
-
-
                 </section>
-            </>
-        })
-        }
-        </div>
+            </div>}
     </>
 }

@@ -30,8 +30,9 @@
 }
 
 .navBar li {
-    width: 145px;
+    width: 150px;
     text-align: center;
+    font-size: 16px;
 }
 
 .navBar a {
@@ -43,12 +44,20 @@
 
 .logo {
     margin: 1vh;
-    width: 145px;
     padding-right: 5vh;
     position: relative;
     top: 0.9vh;
+    object-fit: cover;
+    object-position: center;
 }
 
 .navSpacer {
     margin-bottom: 14vh;
+}
+
+@media only screen and (max-width: 1450px) {
+    .navBar li {
+        width: 115px;
+        font-size: 12px;
+    }
 }

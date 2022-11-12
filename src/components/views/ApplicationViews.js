@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { EventList } from "../events/EventList";
 import { AboutUs } from "../aboutUs/AboutUs";
 import { EventForm } from "../events/EventForm";
 //import { Footer } from "../footer/Footer";
@@ -13,7 +14,7 @@ export const ApplicationViews = () => {
     <Routes>
       {/* <Route path="/about-us" element={<>about-us </>} /> */}
       {/* <Route path="/map" element={<>map</>} /> */}
-      <Route path="/events" element={<Event />} />
+      <Route path="/events" element={< EventList />} />
       <Route path="/event/:eventId" element={<>Event Details</>} />
       <Route path="/profile" element={<>Profile</>} />
       <Route path="/aboutUs" element={<AboutUs />} />

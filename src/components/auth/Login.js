@@ -32,7 +32,7 @@ export const Login = () => {
   };
 
   return <>
-    <img className="logo" src={require("../nav/images/logo.png")} alt="" />
+    <img className="logo" src={require("../nav/nav-images/logo.png")} alt="" />
     <main className="container--login">
       <section>
         <form className="form--login" onSubmit={handleLogin}>

@@ -9,10 +9,10 @@ export const Navbar = () => {
     return <>
         <nav>
             <div className="navBar">
-                <img className="logo" src={require("./images/logo.png")} alt="" />
+                <img className="logo" src={require("./nav-images/logo.png")} alt="" />
                 <ul>
                     <li className="navBar_item"><Link className="navBar_link" to="/aboutUs">About Us</Link></li>
-                    <li className="navBar_item"><Link className="navBar_link" to="/map">Directions</Link></li>
+                    <li className="navBar_item"><Link className="navBar_link" to="/map">Map</Link></li>
                     <li className="navBar_item"><Link className="navBar_link" to="/events">Events</Link></li>
                     <li className="navBar_item"><Link className="navBar_link" to="">My Events</Link></li>
                     <li className="navBar_item"><Link className="navBar_link" to="">Profile</Link></li>
