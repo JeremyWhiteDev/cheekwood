@@ -70,15 +70,15 @@ export const Comment = ({
                     className="comment_image"
                 />
                 <>
-                <CommentEdit/>
-{/*                 <CommentEdit
+               {/*  <CommentEdit/> */}
+                <CommentEdit
                 id={id}
                 eventName={eventName}
                 myComment={myComment}
                 link={link}
                 currentUser={currentUser}
                 commentObject={commentObject}
-                />  */}
+                />  
                     {deleteButton()}
                 </>
             </section>
