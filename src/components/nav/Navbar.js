@@ -14,6 +14,7 @@ export const Navbar = () => {
         <li className="navBar_item"><Link className="navBar_link" to="/events">Events</Link></li>
         <li className="navBar_item"><Link className="navBar_link" to="">My Events</Link></li>
         <li className="navBar_item"><Link className="navBar_link" to="/profile">Profile</Link></li>
+        <li className="navBar_item"><Link className="navBar_link" to="/questions">FAQ</Link></li>
         {
             localStorage.getItem("project_user")
                 ?
