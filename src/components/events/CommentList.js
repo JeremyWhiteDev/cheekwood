@@ -13,7 +13,7 @@ export const CommentList = () => {
     eventId: 0,
   });
 
-  const [commentPageNumber, setCommentPage] = useState(1);
+  const [commentPageNumber, setCommentPage] = useState({ currentPage: 1 });
   const { eventId } = useParams();
 
   const [users, setUsers] = useState([]);
@@ -47,7 +47,7 @@ export const CommentList = () => {
     const response = await fetch(
       `http://localhost:8088/patronComments?eventId=${parseInt(
         eventId
-      )}&_sort=id&_order=desc&_page=${commentPageNumber}&_limit=5`
+      )}&_sort=id&_order=desc&_page=${commentPageNumber.currentPage}&_limit=5`
     );
     const data = await response.json();
     console.log(data);
@@ -73,7 +73,7 @@ export const CommentList = () => {
       body: JSON.stringify(userCommentCopy),
     });
     setCommentOpen(false);
-    getEventComments();
+    setCommentPage({ currentPage: 1 });
   };
 
   return (
@@ -96,7 +96,9 @@ export const CommentList = () => {
             />
             <button
               className="comment-btn"
-              onClick={(click) => addComment(click)}
+              onClick={(click) => {
+                addComment(click);
+              }}
             >
               Submit
             </button>
@@ -130,14 +132,15 @@ export const CommentList = () => {
             </div>
           </div>
         ))}
-        <button
+        {/* <button
           className="comment-btn show-comment-btn"
-          onClick={async () => {
-            setCommentPage((prev) => prev + 1);
+          onClick={async (event) => {
+            // setCommentPage((prev) => prev.currentPage + 1);
+            addComment(event);
           }}
         >
           Show More Comments
-        </button>
+        </button> */}
       </section>
     </>
   );
