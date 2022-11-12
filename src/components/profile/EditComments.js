@@ -3,12 +3,6 @@ import { useEffect, useState } from "react";
 
 export const CommentEdit = ({ commentObject, currentUser,myComment,id }) => {
     const [editCommentM, updateEditComment] = useState({
-        // userId: commentObject.userId,
-        // eventId: commentObject.eventId,
-        // comment: commentObject.commentObject,
-        id:0,
-        userId: 0,
-        eventId: 0,
         comment: "",
     });
 
@@ -82,3 +76,17 @@ export const CommentEdit = ({ commentObject, currentUser,myComment,id }) => {
         </>
     );
 };
+
+
+
+
+// <CommentEdit
+// id={id}
+// eventName={eventName}
+// myComment={myComment}
+// link={link}
+// currentUser={currentUser}
+// commentObject={commentObject}
+// />
+
+
