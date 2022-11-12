@@ -37,6 +37,11 @@
   ],
   "patronSavedEvents": [
     {
+      "id": 1,
+      "userId": 2,
+      "eventId": 1
+    },
+    {
       "id": 2,
       "userId": 3,
       "eventId": 2
@@ -45,16 +50,6 @@
       "id": 3,
       "userId": 4,
       "eventId": 3
-    },
-    {
-      "userId": 2,
-      "eventId": 2,
-      "id": 4
-    },
-    {
-      "userId": 2,
-      "eventId": 1,
-      "id": 5
     }
   ],
   "patronComments": [
@@ -75,54 +70,6 @@
       "userId": 4,
       "eventId": 3,
       "comment": "Wonderful sites and excellent Team."
-    },
-    {
-      "userId": 2,
-      "comment": "Comment #2",
-      "eventId": 1,
-      "id": 4
-    },
-    {
-      "userId": 2,
-      "comment": "Comment #3",
-      "eventId": 1,
-      "id": 5
-    },
-    {
-      "userId": 2,
-      "comment": "Comment #4",
-      "eventId": 1,
-      "id": 6
-    },
-    {
-      "userId": 2,
-      "comment": "Comment #5",
-      "eventId": 1,
-      "id": 7
-    },
-    {
-      "userId": 2,
-      "comment": "Comment # 6",
-      "eventId": 1,
-      "id": 8
-    },
-    {
-      "userId": 2,
-      "comment": "Comment #7",
-      "eventId": 1,
-      "id": 9
-    },
-    {
-      "userId": 2,
-      "comment": "Comment #8",
-      "eventId": 1,
-      "id": 10
-    },
-    {
-      "userId": 2,
-      "comment": "comment #9",
-      "eventId": 1,
-      "id": 11
     }
   ],
   "events": [
@@ -150,7 +97,7 @@
       "id": 3,
       "name": "Member Orientation",
       "summary": "Meet our members and team",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "description": "Make the most of your membership by joining us for a fun and informative presentation with our Member Services Team!",
       "startDate": "3/1/2022",
       "endDate": "3/3/2022",
       "eventTypeId": 3,

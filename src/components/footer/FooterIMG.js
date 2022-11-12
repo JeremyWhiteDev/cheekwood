@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { LikeButton } from "./footerLike";
 
 export const FooterIMG = () => {
   const [photos, setPhotos] = useState([]);
@@ -6,7 +8,7 @@ export const FooterIMG = () => {
   /* --------------------------------- */
   const localCheekwoodUser = localStorage.getItem("project_user");
   const cheekwoodUserObject = JSON.parse(localCheekwoodUser);
-  //   console.log(cheekwoodUserObject);
+  console.log(cheekwoodUserObject);
   /* -------------Display-------------- */
   useEffect(() => {
     const fetchData = async () => {
@@ -22,16 +24,21 @@ export const FooterIMG = () => {
       <section>
         <article className="footerIMG_container">
           <h2 className="icon">from our instagram</h2>
-          {photos.map((photo) => (
-            <img
-              key={`photo__${photo.id}`}
-              src={photo.Image}
-              width="10%"
-              height="10%"
-              className="footerIMG_image"
-            />
-          ))}
-          ;
+          {photos.map((photo) => {
+            return (
+              <>
+                <div className="footerIMG_image">
+                  <LikeButton />
+                  <img
+                    src={photo.Image}
+                    width="100%"
+                    height="100%"
+                    key={`photo__${photo.id}`}
+                  />
+                </div>
+              </>
+            );
+          })}
         </article>
       </section>
     </>
