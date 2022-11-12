@@ -16,8 +16,55 @@ export const EventDetails = () => {
     eventType: {},
   });
   const [saved, setSaved] = useState(false);
-
+  const [savedEvent, setSavedEvent] = useState({});
   const { eventId } = useParams();
+
+  const localUser = localStorage.getItem("project_user");
+  const projectUserObject = JSON.parse(localUser);
+
+  const fetchSaveStatus = async () => {
+    const patronSavedResponse = await fetch(
+      `http://localhost:8088/patronSavedEvents?eventId=${parseInt(
+        eventId
+      )}&userId=${projectUserObject.id}`
+    );
+    const savedEventJson = await patronSavedResponse.json();
+    if (savedEventJson.length > 0) {
+      setSavedEvent(savedEventJson[0]);
+      console.log(savedEvent);
+      setSaved(true);
+    } else {
+      setSaved(false);
+    }
+  };
+
+  const saveOrUnsave = async (e) => {
+    e.preventDefault();
+    if (saved) {
+      setSaved(!saved);
+      const deleteSavedResponse = await fetch(
+        `http://localhost:8088/patronSavedEvents/${savedEvent.id}`,
+        { method: "DELETE" }
+      );
+    } else {
+      setSaved(!saved);
+      const saveData = {
+        userId: projectUserObject.id,
+        eventId: parseInt(eventId),
+      };
+      const addSavedResponse = await fetch(
+        `http://localhost:8088/patronSavedEvents`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(saveData),
+        }
+      );
+      fetchSaveStatus();
+    }
+  };
 
   const navigate = useNavigate();
 
@@ -29,6 +76,7 @@ export const EventDetails = () => {
       const eventData = await eventResponse.json();
 
       setEvent(eventData);
+      fetchSaveStatus();
     };
     fetchData();
   }, []);
@@ -65,7 +113,7 @@ export const EventDetails = () => {
           <div className="button-options ">
             <button
               className="event-btn save-btn"
-              onClick={() => setSaved(!saved)}
+              onClick={(click) => saveOrUnsave(click)}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

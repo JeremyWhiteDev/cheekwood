@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { isCompositeComponent } from "react-dom/test-utils";
 import { useParams } from "react-router-dom";
 
 export const CommentList = () => {
@@ -12,6 +13,7 @@ export const CommentList = () => {
     eventId: 0,
   });
 
+  const [commentPageNumber, setCommentPage] = useState(1);
   const { eventId } = useParams();
 
   const [users, setUsers] = useState([]);
@@ -29,18 +31,32 @@ export const CommentList = () => {
       const userResponse = await fetch(`http://localhost:8088/users`);
       const userData = await userResponse.json();
       setUsers(userData);
+      const response = await fetch(
+        `http://localhost:8088/patronComments?eventId=${parseInt(
+          eventId
+        )}&_sort=id&_order=desc&_page=1&_limit=5`
+      );
+      const data = await response.json();
+      setPatronComments(data);
     };
     fetchUsers();
-    getEventComments();
   }, []);
 
   const getEventComments = async () => {
+    console.log(commentPageNumber);
     const response = await fetch(
-      `http://localhost:8088/patronComments?eventId=${parseInt(eventId)}`
+      `http://localhost:8088/patronComments?eventId=${parseInt(
+        eventId
+      )}&_sort=id&_order=desc&_page=${commentPageNumber}&_limit=5`
     );
     const data = await response.json();
-    setPatronComments(data);
+    console.log(data);
+    const newData = patronComments.concat(data);
+    setPatronComments(newData);
   };
+  useEffect(() => {
+    getEventComments();
+  }, [commentPageNumber]);
 
   const addComment = async (e) => {
     e.preventDefault();
@@ -114,6 +130,14 @@ export const CommentList = () => {
             </div>
           </div>
         ))}
+        <button
+          className="comment-btn show-comment-btn"
+          onClick={async () => {
+            setCommentPage((prev) => prev + 1);
+          }}
+        >
+          Show More Comments
+        </button>
       </section>
     </>
   );
