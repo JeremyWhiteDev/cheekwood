@@ -3,12 +3,6 @@ import { useEffect, useState } from "react";
 
 export const CommentEdit = ({ commentObject, currentUser,myComment,id }) => {
     const [editCommentM, updateEditComment] = useState({
-        // userId: commentObject.userId,
-        // eventId: commentObject.eventId,
-        // comment: commentObject.commentObject,
-        id:0,
-        userId: 0,
-        eventId: 0,
         comment: "",
     });
 
@@ -17,8 +11,8 @@ export const CommentEdit = ({ commentObject, currentUser,myComment,id }) => {
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch(
-                `http://localhost:8088/patronComments/${commentObject.id}`
-                //`http://localhost:8088/patronComments?/userId=${commentObject.userId} `
+                //`http://localhost:8088/patronComments/${commentObject.id}`
+                `http://localhost:8088/patronComments?&userId=${commentObject.userId} `
             );
             const data = await response.json();
             //console.log(data);
@@ -56,7 +50,7 @@ export const CommentEdit = ({ commentObject, currentUser,myComment,id }) => {
     /* ------------------------------ */
     return (
         <>
-            <label htmlFor="comment">Comment:</label>
+            {/* <label htmlFor="comment">Comment:</label> */}
             
             <input
                 required
@@ -82,3 +76,17 @@ export const CommentEdit = ({ commentObject, currentUser,myComment,id }) => {
         </>
     );
 };
+
+
+
+
+// <CommentEdit
+// id={id}
+// eventName={eventName}
+// myComment={myComment}
+// link={link}
+// currentUser={currentUser}
+// commentObject={commentObject}
+// />
+
+
