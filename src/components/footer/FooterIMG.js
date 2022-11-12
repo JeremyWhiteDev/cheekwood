@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { LikeButton } from "./footerLike";
 
 export const FooterIMG = () => {
     const [photos, setPhotos] = useState([]);
@@ -27,13 +29,15 @@ export const FooterIMG = () => {
                     {photos.map((photo) => {
                         return (
                             <>
-                                <img
-                                    src={photo.Image}
-                                    width="10%"
-                                    height="10%"
-                                    className="footerIMG_image"
-                                    key={`photo__${photo.id}`}
-                                />
+                            <div className="footerIMG_image">
+                                    <LikeButton />
+                                    <img
+                                        src={photo.Image}
+                                        width="100%"
+                                        height="100%"
+                                        key={`photo__${photo.id}`}
+                                    />
+                                </div>
                             </>
                         );
                     })}
@@ -42,5 +46,3 @@ export const FooterIMG = () => {
         </>
     );
 };
-
-
