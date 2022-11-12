@@ -14,8 +14,11 @@ export const QuestionPage = () => {
         questionsFetch();
       }, []);
 
-    return <div className="wrapper">
-        
+    return <div className="parent">
+     
+    <div className="wrapper">
+    <div className="header"><h1>Frequently Asked Questions</h1></div>
+       
          <article className="accordion">
             {questions.map((question) => (
                 <Questions
@@ -26,5 +29,6 @@ export const QuestionPage = () => {
                  />
              ))}
         </article>
+    </div>
     </div>
 }
