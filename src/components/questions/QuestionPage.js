@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./QuestionForm.css";
 import { Questions } from "./Questions.js";
 
-export const QuestionForm = () => {
+export const QuestionPage = () => {
     const [questions, setQuestions] = useState([])
     
     useEffect(() => {
