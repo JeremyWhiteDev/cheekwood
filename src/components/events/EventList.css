@@ -1,0 +1,14 @@
+.events {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.event {
+    background-color: palegreen;
+    border: 2px dotted purple;
+    color: black;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}

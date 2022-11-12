@@ -1,9 +1,11 @@
 import { Route, Routes } from "react-router-dom";
+import { EventList } from "../events/EventList";
 import { AboutUs } from "../aboutUs/AboutUs";
 import { EventDetails } from "../events/EventDetails";
 import { EventForm } from "../events/EventForm";
 //import { Footer } from "../footer/Footer";
 import { Map } from "../map/Map";
+import { Profile } from "../profile/Profile";
 
 export const ApplicationViews = () => {
   const localUser = localStorage.getItem("project_user");
@@ -13,9 +15,9 @@ export const ApplicationViews = () => {
     <Routes>
       {/* <Route path="/about-us" element={<>about-us </>} /> */}
       {/* <Route path="/map" element={<>map</>} /> */}
-      <Route path="/events" element={<>EventList</>} />
+      <Route path="/events" element={<EventList />} />
       <Route path="/event/:eventId" element={<EventDetails />} />
-      <Route path="/profile" element={<>Profile</>} />
+      <Route path="/profile" element={<Profile />} />
       <Route path="/aboutUs" element={<AboutUs />} />
       <Route path="/map" element={<Map />} />
       {/* <Route path="/" element={<Footer/>} /> */}
@@ -31,6 +33,14 @@ export const ApplicationViews = () => {
       ) : (
         ""
       )}
+
+      {/*       {projectUserObject.userType === "patron" ? (
+        <>
+          <Route path="/profile" element={<Profile />} />
+        </>
+      ) : (
+        ""
+      )} */}
     </Routes>
   );
 };
