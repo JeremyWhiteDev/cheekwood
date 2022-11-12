@@ -107,7 +107,7 @@ export const Event = ({ image,
                                         <a href="#"><img src={require("./event-images/comment-box.png")}
                                             className="button" onClick={
                                                 () => {
-                                                    navigate("/")
+                                                    navigate(`/event/${id}`)
                                                 }
                                             } /></a>
                                         <div className="counter commentCounter">{countComments()}</div></div>
@@ -116,13 +116,13 @@ export const Event = ({ image,
                                     {projectUserObject.userType === "employee" ? <button
                                         onClick={
                                             () => {
-                                                navigate("/")
+                                                navigate(`/event/edit/${id}`)
                                             }
                                         }>EDIT</button> : ""}
                                     <button
                                         onClick={
                                             () => {
-                                                navigate("/")
+                                                navigate(`/event/${id}`)
                                             }
                                         }>MORE INFO</button>
                                 </div>
