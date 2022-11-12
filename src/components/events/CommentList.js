@@ -44,6 +44,7 @@ export const CommentList = () => {
 
   const addComment = async (e) => {
     e.preventDefault();
+    e.stopPropagation();
     const userCommentCopy = { ...userComment };
     userCommentCopy.userId = projectUserObject.id;
     userCommentCopy.eventId = parseInt(eventId);
