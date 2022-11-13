@@ -14,6 +14,7 @@ export const CommentList = () => {
   });
 
   const [commentPageNumber, setCommentPage] = useState({ currentPage: 1 });
+  const [totalCommentLength, setTotalCommentLength] = useState(0);
   const { eventId } = useParams();
 
   const [users, setUsers] = useState([]);
@@ -36,7 +37,12 @@ export const CommentList = () => {
           eventId
         )}&_sort=id&_order=desc&_page=1&_limit=5`
       );
+
+      const commentLength = JSON.parse(response.headers.get("X-Total-Count"));
+      setTotalCommentLength(commentLength);
+
       const data = await response.json();
+      console.log(data);
       setPatronComments(data);
     };
     fetchUsers();
@@ -141,17 +147,21 @@ export const CommentList = () => {
             </div>
           </div>
         ))}
-        <button
-          className="comment-btn show-comment-btn"
-          onClick={(event) => {
-            const prevObj = { ...commentPageNumber };
-            prevObj.currentPage += 1;
-            setCommentPage(prevObj);
-            // addComment(event);
-          }}
-        >
-          Show More Comments
-        </button>
+        {totalCommentLength > patronComments.length ? (
+          <button
+            className="comment-btn show-comment-btn"
+            onClick={(event) => {
+              const prevObj = { ...commentPageNumber };
+              prevObj.currentPage += 1;
+              setCommentPage(prevObj);
+              // addComment(event);
+            }}
+          >
+            Show More Comments
+          </button>
+        ) : (
+          ""
+        )}
       </section>
     </>
   );
