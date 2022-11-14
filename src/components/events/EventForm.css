@@ -100,7 +100,7 @@ input, textarea {
     color: aliceblue;
     border: 1px solid gray;
     box-shadow: 0 0 2px gray;
-    margin-right: 20px ;
+    margin-right: 20px;
 }
 .update-btn:hover {
     background-color: #51a651;
