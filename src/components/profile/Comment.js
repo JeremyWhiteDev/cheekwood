@@ -9,8 +9,8 @@ export const Comment = ({
   commentObject,
   eventId,
 }) => {
-  console.log("comment object", commentObject);
-  console.log("current user:", currentUser);
+  //   console.log("comment object", commentObject);
+  //   console.log("current user:", currentUser);
   //
   /* ------------------------delete-------------------------- */
 
