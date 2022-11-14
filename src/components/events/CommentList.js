@@ -94,7 +94,17 @@ export const CommentList = () => {
   return (
     <>
       <section className="comment-list">
-        <div className="mb-1 xl bold w-600 center">Join the Conversation:</div>
+        <div className="flex w-600 center space-between align-center">
+          <div className="mb-1 xl bold w-300 center-y">
+            Join the Conversation:
+          </div>
+          <div className="right">
+            Comments:{" "}
+            <span className="rounded bg-red p-1 text-white">
+              {totalCommentLength}
+            </span>
+          </div>
+        </div>
 
         {commentIsOpen ? (
           <>
