@@ -88,7 +88,7 @@ export const Comment = ({
           </button>
           <button
             className=" border-none border-bottom mr-5 hover:pointer-cursor"
-            onClick={(click) => handleCancel(click)}
+            onClick={(click) => handleDelete(click)}
           >
             Delete
           </button>
@@ -99,7 +99,7 @@ export const Comment = ({
         <>
           <button
             className=" border-none border-bottom mr-5 hover:pointer-cursor"
-            onClick={(click) => handleCancel(click)}
+            onClick={(click) => handleDelete(click)}
           >
             Delete
           </button>
