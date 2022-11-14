@@ -123,11 +123,11 @@ export const Comment = ({
             <div>{displayCommentOptions()}</div>
           </div>
           {editIsOpen ? (
-            <input
+            <textarea
               className="comment-field"
               value={commentBody}
               onChange={(e) => setCommentBody(e.target.value)}
-            ></input>
+            ></textarea>
           ) : (
             `${comment}`
           )}
