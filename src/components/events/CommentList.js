@@ -28,6 +28,7 @@ export const CommentList = () => {
       const userResponse = await fetch(`http://localhost:8088/users`);
       const userData = await userResponse.json();
       setUsers(userData);
+
       const response = await fetch(
         `http://localhost:8088/patronComments?eventId=${parseInt(
           eventId
@@ -151,6 +152,8 @@ export const CommentList = () => {
             userId={comment.userId}
             users={users}
             loggedInUserId={projectUserObject.id}
+            getEventComments={getEventComments}
+            eventId={parseInt(eventId)}
           />
         ))}
         {totalCommentLength > patronComments.length ? (
