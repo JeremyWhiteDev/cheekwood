@@ -106,6 +106,7 @@
 .show-comment-btn {
     /* min-width: 200px; */
     display: flex;
+    justify-content: center;
     width: 100%;
    
 }
