@@ -13,7 +13,7 @@ export const Footer = () => {
                 <p className="about_address about_hours">
                   1200 Forrest Park Drive &nbsp;&nbsp;
                 </p>
-                <p className="mobile-break">
+                <p className="mobile-break about_hours">
                   Nashville, Tennessee 37205&nbsp;&nbsp;|&nbsp;&nbsp;
                   <a
                     className="about_hours G_text"
