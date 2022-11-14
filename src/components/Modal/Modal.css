@@ -6,7 +6,7 @@
     transform: translate(-50%, -50%);
     /* background-color: white; */
     width: 80%;
-    max-width: 500px;
+    max-width: 540px;
     z-index: 1000;
     box-sizing: border-box; 
 
@@ -39,7 +39,7 @@
     width: 20px;
     position: fixed;
     top: 54px;
-    right: 25px;
+    right: 30px;
     background-color: white;
     border: none;
     font-size: large;
