@@ -158,6 +158,11 @@
     font-weight: 700;
 }
 
+.comment-title {
+    display: flex;
+    justify-content: space-between;
+}
+
 .save-btn {
     width: 9rem;
 }
@@ -273,3 +278,32 @@ margin-left: 15px;
     margin-top: auto;
     margin-bottom: auto;
   }
+
+  .pill {
+    border-radius: 14px;
+  }
+
+  .border-thin {
+    border: 1px solid gray;
+  }
+
+.hover\:bg-dark-red:hover {
+    background-color: #ae4541;
+}
+
+.mr-5 {
+    margin-right: 8px;
+}
+
+.border-none {
+    border: none;
+}
+
+.hover\:pointer-cursor:hover {
+    cursor: pointer;
+
+}
+
+.border-bottom {
+    border-bottom: 1px solid darkgray;
+}

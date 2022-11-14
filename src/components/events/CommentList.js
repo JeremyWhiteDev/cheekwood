@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { isCompositeComponent } from "react-dom/test-utils";
 import { useParams } from "react-router-dom";
+import { Comment } from "./Comment";
 
 export const CommentList = () => {
   const [patronComments, setPatronComments] = useState([]);
@@ -18,11 +19,6 @@ export const CommentList = () => {
   const { eventId } = useParams();
 
   const [users, setUsers] = useState([]);
-
-  const findUserName = (userId) => {
-    const foundUser = users.find((user) => user.id === userId);
-    return foundUser.fullName;
-  };
 
   const localUser = localStorage.getItem("project_user");
   const projectUserObject = JSON.parse(localUser);
@@ -148,16 +144,14 @@ export const CommentList = () => {
         )}
 
         {patronComments.map((comment) => (
-          <div className="w-600 center single-comment" key={comment.id}>
-            <img
-              className="comment-avatar"
-              src="https://ionicframework.com/docs/img/demos/avatar.svg"
-            ></img>
-            <div className="comment">
-              <div className="user-name">{findUserName(comment.userId)}</div>
-              {comment.comment}
-            </div>
-          </div>
+          <Comment
+            commentId={comment.id}
+            key={`comment--${comment.id}`}
+            comment={comment.comment}
+            userId={comment.userId}
+            users={users}
+            loggedInUserId={projectUserObject.id}
+          />
         ))}
         {totalCommentLength > patronComments.length ? (
           <button
