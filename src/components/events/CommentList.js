@@ -24,43 +24,44 @@ export const CommentList = () => {
   const projectUserObject = JSON.parse(localUser);
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      const userResponse = await fetch(`http://localhost:8088/users`);
-      const userData = await userResponse.json();
-      setUsers(userData);
-
-      const response = await fetch(
-        `http://localhost:8088/patronComments?eventId=${parseInt(
-          eventId
-        )}&_sort=id&_order=desc&_page=1&_limit=5`
-      );
-
-      const commentLength = JSON.parse(response.headers.get("X-Total-Count"));
-      setTotalCommentLength(commentLength);
-
-      const data = await response.json();
-      console.log(data);
-      setPatronComments(data);
-    };
-    fetchUsers();
+    getInitialEventComments();
   }, []);
+  const getInitialEventComments = async () => {
+    const userResponse = await fetch(`http://localhost:8088/users`);
+    const userData = await userResponse.json();
+    setUsers(userData);
 
-  const getEventComments = async () => {
-    console.log(commentPageNumber);
-    const commentResponse = await fetch(
+    const response = await fetch(
       `http://localhost:8088/patronComments?eventId=${parseInt(
         eventId
-      )}&_sort=id&_order=desc&_page=${commentPageNumber.currentPage}&_limit=5`
+      )}&_sort=id&_order=desc&_page=1&_limit=5`
     );
-    const commentData = await commentResponse.json();
-    // console.log(commentData);
 
-    if (commentData.length > 0) {
-      const newData = patronComments.concat(commentData);
-      setPatronComments(newData);
-    }
+    const commentLength = JSON.parse(response.headers.get("X-Total-Count"));
+    setTotalCommentLength(commentLength);
+
+    const data = await response.json();
+    console.log(data);
+    setPatronComments(data);
   };
+
   useEffect(() => {
+    const getEventComments = async () => {
+      // console.log(commentPageNumber);
+      const commentResponse = await fetch(
+        `http://localhost:8088/patronComments?eventId=${parseInt(
+          eventId
+        )}&_sort=id&_order=desc&_page=${commentPageNumber.currentPage}&_limit=5`
+      );
+
+      const commentData = await commentResponse.json();
+      // console.log(commentData);
+
+      if (commentData.length > 0) {
+        const newData = patronComments.concat(commentData);
+        setPatronComments(newData);
+      }
+    };
     getEventComments();
   }, [commentPageNumber]);
 
@@ -153,7 +154,7 @@ export const CommentList = () => {
             users={users}
             loggedInUserId={projectUserObject.id}
             loggedInUserType={projectUserObject.userType}
-            getEventComments={getEventComments}
+            getEventComments={getInitialEventComments}
             eventId={parseInt(eventId)}
           />
         ))}
