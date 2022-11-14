@@ -152,6 +152,7 @@ export const CommentList = () => {
             userId={comment.userId}
             users={users}
             loggedInUserId={projectUserObject.id}
+            loggedInUserType={projectUserObject.userType}
             getEventComments={getEventComments}
             eventId={parseInt(eventId)}
           />

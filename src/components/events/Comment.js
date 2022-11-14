@@ -8,6 +8,7 @@ export const Comment = ({
   loggedInUserId,
   getEventComments,
   eventId,
+  loggedInUserType,
 }) => {
   const [editIsOpen, setEditIsOpen] = useState(false);
 
@@ -40,14 +41,73 @@ export const Comment = ({
     getEventComments();
   };
 
-  const handleDelete = (e) => {
+  const handleDelete = async (e) => {
     e.preventDefault();
+    const deletedResponse = await fetch(
+      `http://localhost:8088/patronComments/${commentId}`,
+      {
+        method: "DELETE",
+      }
+    );
+    setEditIsOpen(false);
+    getEventComments();
   };
 
   const handleCancel = (e) => {
     e.preventDefault();
     setEditIsOpen(false);
     setCommentBody(comment);
+  };
+
+  const displayCommentOptions = () => {
+    if (loggedInUserId === userId && editIsOpen) {
+      return (
+        <>
+          <button
+            className=" border-none border-bottom mr-5 hover:pointer-cursor"
+            onClick={(click) => handleEdit(click)}
+          >
+            Update
+          </button>
+          <button
+            className=" border-none border-bottom mr-5 hover:pointer-cursor"
+            onClick={(click) => handleCancel(click)}
+          >
+            Cancel
+          </button>
+        </>
+      );
+    } else if (loggedInUserId === userId) {
+      return (
+        <>
+          <button
+            className=" border-none border-bottom mr-5 hover:pointer-cursor"
+            onClick={() => setEditIsOpen(true)}
+          >
+            Edit
+          </button>
+          <button
+            className=" border-none border-bottom mr-5 hover:pointer-cursor"
+            onClick={(click) => handleCancel(click)}
+          >
+            Delete
+          </button>
+        </>
+      );
+    } else if (loggedInUserType === "employee") {
+      return (
+        <>
+          <button
+            className=" border-none border-bottom mr-5 hover:pointer-cursor"
+            onClick={(click) => handleCancel(click)}
+          >
+            Delete
+          </button>
+        </>
+      );
+    } else {
+      return null;
+    }
   };
 
   return (
@@ -60,45 +120,7 @@ export const Comment = ({
         <div className="comment">
           <div className="comment-title">
             <div className="user-name">{findUserName(userId)}</div>
-            {loggedInUserId === userId ? (
-              <>
-                <div>
-                  {editIsOpen ? (
-                    <>
-                      <button
-                        className=" border-none border-bottom mr-5 hover:pointer-cursor"
-                        onClick={(click) => handleEdit(click)}
-                      >
-                        Update
-                      </button>
-                      <button
-                        className=" border-none border-bottom mr-5 hover:pointer-cursor"
-                        onClick={(click) => handleCancel(click)}
-                      >
-                        Cancel
-                      </button>
-                    </>
-                  ) : (
-                    <>
-                      <button
-                        className=" border-none border-bottom mr-5 hover:pointer-cursor"
-                        onClick={() => setEditIsOpen(true)}
-                      >
-                        Edit
-                      </button>
-                      <button
-                        className="border-none border-bottom mr-5 hover:pointer-cursor"
-                        onClick={(click) => handleDelete(click)}
-                      >
-                        Delete
-                      </button>
-                    </>
-                  )}
-                </div>
-              </>
-            ) : (
-              ""
-            )}
+            <div>{displayCommentOptions()}</div>
           </div>
           {editIsOpen ? (
             <input
