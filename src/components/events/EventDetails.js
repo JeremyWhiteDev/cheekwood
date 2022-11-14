@@ -88,9 +88,11 @@ export const EventDetails = () => {
           className="event-header-img"
           src="https://cheekwood.org/wp-content/uploads/2020/01/Cheekwood-Mansion-Website-Scrollbar-Size-1135x425.jpg"
         />
-        <div className="event-header-text">
+        <div className="event-header-text text-white">
           <h1 className="mb-1 bold">{event.name}</h1>
-          <p className="mb-1  bold xl">Type of Event: {event.eventType.type}</p>
+          <p className="mb-1  bold xl text-white">
+            Type of Event: {event.eventType.type}
+          </p>
           <p className="mb-1  bold xl">Price: TBD</p>
           <p className="event-time ">
             {event.startDate.length > 10 ? (
