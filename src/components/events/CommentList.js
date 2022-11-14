@@ -27,6 +27,7 @@ export const CommentList = ({ eventId }) => {
   useEffect(() => {
     getInitialEventComments();
   }, []);
+
   const getInitialEventComments = async () => {
     const userResponse = await fetch(`http://localhost:8088/users`);
     const userData = await userResponse.json();
@@ -35,12 +36,11 @@ export const CommentList = ({ eventId }) => {
     const getEventComments = async () => {
       // console.log(commentPageNumber);
       const response = await fetch(
-        `http://localhost:8088/patronComments?eventId=${parseInt(
-          eventId
-        )}&_sort=id&_order=desc&_page=1&_limit=5`
+        `http://localhost:8088/patronComments?eventId=${eventId}&_sort=id&_order=desc&_page=1&_limit=5`
       );
 
       const commentLength = JSON.parse(response.headers.get("X-Total-Count"));
+      console.log(commentLength);
       setTotalCommentLength(commentLength);
 
       const data = await response.json();
@@ -48,14 +48,13 @@ export const CommentList = ({ eventId }) => {
       const newData = patronComments.concat(data);
       setPatronComments(newData);
     };
+    getEventComments();
   };
   useEffect(() => {
     const getEventComments = async () => {
       // console.log(commentPageNumber);
       const commentResponse = await fetch(
-        `http://localhost:8088/patronComments?eventId=${parseInt(
-          eventId
-        )}&_sort=id&_order=desc&_page=${commentPageNumber.currentPage}&_limit=5`
+        `http://localhost:8088/patronComments?eventId=${eventId}&_sort=id&_order=desc&_page=${commentPageNumber.currentPage}&_limit=5`
       );
 
       const commentData = await commentResponse.json();
@@ -74,7 +73,7 @@ export const CommentList = ({ eventId }) => {
     e.stopPropagation();
     const userCommentCopy = { ...userComment };
     userCommentCopy.userId = projectUserObject.id;
-    userCommentCopy.eventId = parseInt(eventId);
+    userCommentCopy.eventId = eventId;
 
     const commentRespone = await fetch(`http://localhost:8088/patronComments`, {
       method: "POST",
@@ -159,7 +158,7 @@ export const CommentList = ({ eventId }) => {
             loggedInUserId={projectUserObject.id}
             loggedInUserType={projectUserObject.userType}
             getEventComments={getInitialEventComments}
-            eventId={parseInt(eventId)}
+            eventId={eventId}
           />
         ))}
         {totalCommentLength > patronComments.length ? (
