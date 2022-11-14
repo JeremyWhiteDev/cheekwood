@@ -5,6 +5,9 @@ import { EventDetails } from "../events/EventDetails";
 import { EventForm } from "../events/EventForm";
 import { Map } from "../map/Map";
 import { Profile } from "../profile/Profile";
+import { CommentEdit } from "../profile/EditComments";
+import { UserForm } from "../profile/UserForm";
+import { UserComments } from "../profile/UserComments";
 
 export const ApplicationViews = () => {
   const localUser = localStorage.getItem("project_user");
@@ -19,6 +22,12 @@ export const ApplicationViews = () => {
       <Route path="/profile" element={<Profile />} />
       <Route path="/aboutUs" element={<AboutUs />} />
       <Route path="/map" element={<Map />} />
+
+      
+      <Route path="/profile/:commentId" element={< UserComments />} />
+      <Route path="/profile/userForm" element={<UserForm />} />
+    {/*   <Route path="/profile/userComments" element={<UserComments />} /> */}
+
 
       {projectUserObject.userType === "employee" ? (
         <>
