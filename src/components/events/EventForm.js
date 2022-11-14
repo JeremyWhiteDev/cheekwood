@@ -28,7 +28,7 @@ export const EventForm = ({ variant }) => {
       const fetchData = async () => {
         const response = await fetch(`http://localhost:8088/events/${eventId}`);
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         if (data.startDate.length < 11) {
           setDateType(true);
         }

@@ -8,7 +8,7 @@ export const FooterIMG = () => {
   /* --------------------------------- */
   const localCheekwoodUser = localStorage.getItem("project_user");
   const cheekwoodUserObject = JSON.parse(localCheekwoodUser);
-  console.log(cheekwoodUserObject);
+  // console.log(cheekwoodUserObject);
   /* -------------Display-------------- */
   useEffect(() => {
     const fetchData = async () => {
