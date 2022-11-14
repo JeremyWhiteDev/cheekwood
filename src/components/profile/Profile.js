@@ -55,11 +55,3 @@ export const Profile = () => {
         </>
     );
 };
-    /* 
-    onClick={() => {
-                            localStorage.removeItem("honey_user")
-                            navigate("/", {replace: true})
-                        }}>
-    */
-
-    // navigate("/tickets"); //???????

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export const CommentEdit = ({ commentObject, currentUser, myComment, id }) => {
-    const {commentId} = useParams();
+    const { commentId } = useParams();
     const [editCommentM, updateEditComment] = useState({
         comment: "",
     });
@@ -34,8 +34,8 @@ export const CommentEdit = ({ commentObject, currentUser, myComment, id }) => {
             body: JSON.stringify(SendToAPI),
         };
         const response = await fetch(
-            `http://localhost:8088/patronComments/edit/${commentId}`,
-            //`http://localhost:8088/patronComments/${commentObject.id}`,
+            //`http://localhost:8088/patronComments/edit/${commentId}`,
+            `http://localhost:8088/patronComments/${commentObject.id}`,
             //`http://localhost:8088/patronComments?/${editCommentM.id}`,
             fetchOptions
         );
@@ -52,8 +52,10 @@ export const CommentEdit = ({ commentObject, currentUser, myComment, id }) => {
     /* ------------------------------ */
     return (
         <>
-            {/* <label htmlFor="comment">Comment:</label> */}
-            <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+            <label htmlFor="comment">Comment:</label>
+            <p>
+                <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+            </p>
             <input
                 required
                 autoFocus
@@ -79,11 +81,3 @@ export const CommentEdit = ({ commentObject, currentUser, myComment, id }) => {
     );
 };
 
-// <CommentEdit
-// id={id}
-// eventName={eventName}
-// myComment={myComment}
-// link={link}
-// currentUser={currentUser}
-// commentObject={commentObject}
-// />
