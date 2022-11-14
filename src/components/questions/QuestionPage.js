@@ -14,10 +14,22 @@ export const QuestionPage = () => {
         questionsFetch();
       }, []);
 
-    return <div className="parent">
+    return <>
+    <section className="faq_mainContainer">
+        <div className="faq_border_1"></div>
+        <div>
+          <img
+            src="https://www.ntacourier.com/sites/default/files/2020-02/cheekwood.jpg"
+            className="faq_image"
+            alt="garden walkway"
+          />
+          <h1 className="FAQ">Frequently Asked Questions</h1>
+        </div>
+        <div className="faq_border_1"></div>
+      </section>
      
     <div className="wrapper">
-    <div className="header"><h1>Frequently Asked Questions</h1></div>
+   
        
          <article className="accordion">
             {questions.map((question) => (
@@ -30,5 +42,6 @@ export const QuestionPage = () => {
              ))}
         </article>
     </div>
-    </div>
+   
+    </>
 }

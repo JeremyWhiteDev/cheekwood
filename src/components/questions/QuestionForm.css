@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+   
+}
+
 .wrapper {
     display: flex;
     height: 100vh;
@@ -58,8 +64,23 @@
     
 }
 
-.parent {
-    align-items: flex-start;
-    justify-content: flex-start;
-  position: relative;
+
+.faq_border_1 {
+    
+    background-color: #EEEEEE;
+    height: 3rem;
+    width:100vmax;
+}
+
+.faq_image {
+    position: relative;
+    bottom: 0;
+    width:100vmax;
+    height: 40vmin;
+    background: none;
+}
+
+h1 {
+    align-items: center;
+    text-align: center;
 }
