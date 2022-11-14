@@ -18,9 +18,9 @@ export const ApplicationViews = () => {
       <Route path="/events" element={<EventList />} />
       <Route path="/event/:eventId" element={<EventDetails />} />
       <Route path="/profile" element={<Profile />} />
+      <Route exact path="/" element={<AboutUs />} />
       <Route path="/aboutUs" element={<AboutUs />} />
       <Route path="/map" element={<Map />} />
-
 
       {projectUserObject.userType === "employee" ? (
         <>
@@ -32,10 +32,7 @@ export const ApplicationViews = () => {
         </>
       ) : (
         ""
-      )
-      }
-
-
-    </Routes >
-  )
+      )}
+    </Routes>
+  );
 };
