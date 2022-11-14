@@ -1,0 +1,189 @@
+body {
+    color: #2D1A02;
+}
+
+.eventCard {
+    padding: 20px 0;
+    margin: 10px 10px;
+    border: #00B189 solid 1px;
+    width: 50%;
+    margin: auto;
+    background-color: white;
+    opacity: 95%;
+    border-radius: 0.5%;
+    box-shadow: 2px 2px 5px 1px black;
+}
+
+.cardDetails {
+    display: flex;
+    position: relative;
+}
+
+@media only screen and (max-width: 1220px) {
+    .cardDetails {
+        flex-direction: column-reverse;
+    }
+
+    .editAndViewButtons {
+        position: absolute;
+        left: 280px;
+        top: 120px;
+    }
+
+    .favoriteAndComment {
+        position: absolute;
+        top: 273px;
+    }
+
+    .eventCard {
+        width: 400px;
+    }
+
+    .eventHeader {
+        padding-left: 15px;
+    }
+
+}
+
+.eventHeader li {
+    list-style-type: none;
+    margin: 4px 0;
+}
+
+.eventName {
+    font-size: 24px;
+}
+
+.eventDates {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.summary {
+    position: absolute;
+    font-size: 18px;
+
+}
+
+.eventImg {
+    width: 250px;
+    height: 200px;
+    margin: 15px 10px 0 0;
+    object-fit: cover;
+    margin: 12px 4px 0 10px;
+    border: 10px solid #2D1A02;
+
+}
+
+.allTheButtons {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 45px;
+
+}
+
+.button {
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+}
+
+.editAndViewButtons {
+    justify-self: end;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 2vw;
+    bottom: 0.2vh;
+}
+
+.editAndViewButtons button {
+    margin: 2px;
+    border: solid 2px #00B189;
+    background-color: white;
+    padding: 20px 10px;
+    width: 100px;
+}
+
+.editAndViewButtons button:hover {
+    background-color: #00B189;
+    color: white
+}
+
+.imageAndButtons {
+    position: absolute;
+    left: 0;
+}
+
+.favoriteAndComment {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 280px;
+    bottom: 0.2vh;
+    z-index: 5;
+}
+
+.favoriteAndComment img:hover {
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1.0);
+    }
+
+    to {
+        transform: scale(1.09);
+    }
+}
+
+.comments,
+.favorites {
+    display: flex;
+}
+
+.comments:hover,
+.favorites:hover {
+    display: flex;
+}
+
+
+
+.favorites img {
+    filter: hue-rotate(0deg) grayscale(99%);
+    position: relative;
+}
+
+.favorited img {
+    filter: hue-rotate(0deg) grayscale(0%)
+}
+
+.counter {
+    border: solid 1.5px #00B189;
+    border-radius: 100%;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    padding: 2px 5px 2px 5px;
+    font-size: 11px;
+    font-weight: bold;
+    position: relative;
+    right: 9.5px;
+    bottom: 5px;
+}
+
+.commentCounter {
+    background-color: #01AEEF;
+    /* box-shadow: 0px 0px 0px 2px #01AEEF; */
+}
+
+.favCounter {
+    background-color: #DD4346;
+    /* box-shadow: 0px 0px 0px 2px #DD4346; */
+
+}

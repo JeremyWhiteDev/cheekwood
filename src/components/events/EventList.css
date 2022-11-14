@@ -1,4 +1,4 @@
-.events {
+/* .events {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -11,4 +11,121 @@
     color: black;
     padding: 0.5rem;
     margin: 0.5rem;
+} */
+.events {
+    background-image: url(./event-images/Cheekwood.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 10px 0 50px;
+}
+
+.filterBar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: end;
+    background-color: #EEEEEE;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 95px;
+    width: 100%;
+    z-index: 90;
+    opacity: 93%;
+    height: 100px;
+}
+
+.filterBar label {
+    color: #019a76;
+}
+
+.filterBar label,
+select {
+    position: relative;
+    left: 80px;
+}
+
+.filterBar select,
+option {
+    text-transform: capitalize;
+    margin: 0 10px 0;
+    border: 2px solid #00B189;
+    padding: 5px 0px 5px 8px;
+    font-size: 16px;
+    background-color: #00B189;
+    color: white;
+}
+
+.addEvent {
+    margin: 2px;
+    border: solid 2px #00B189;
+    color: white;
+    background-color: #EEEEEE;
+    padding: 10px 10px 10px 10px;
+    width: 150px;
+    line-height: 25px;
+    position: absolute;
+    top: 35px;
+    left: 5px;
+    background-color: #00B189;
+
+}
+
+.addEvent:hover {
+    background-color: white;
+    color: #2D1A02;
+    padding: 10px 0px 10px 25px;
+}
+
+.addEventContainer img {
+    width: 25px;
+    position: absolute;
+    top: 46.5px;
+    left: 15.5px;
+}
+
+.spacer {
+    margin-top: 100px;
+}
+
+.addEventContainer {
+    display: flex;
+}
+
+.calendar {
+    width: 35px;
+    position: absolute;
+    top: 41px;
+    left: 185px;
+}
+
+.sortFavorited {
+    width: 38px;
+    position: absolute;
+    top: 41px;
+    left: 235px;
+    filter: hue-rotate(164deg);
+}
+
+
+.eventSpacer {
+    margin: 10px 0 0;
+}
+
+@media only screen and (max-width: 800px) {
+    .filterBar {
+        height: 150px;
+        justify-content: start;
+    }
+
+    .filterBar label,
+    select {
+        left: 20px;
+    }
+
+    .spacer {
+        margin-top: 150px;
+    }
+
 }

@@ -10,7 +10,7 @@
 
 .event-form {
 
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
     max-width: 600px;
     padding: 20px;
@@ -100,6 +100,7 @@ input, textarea {
     color: aliceblue;
     border: 1px solid gray;
     box-shadow: 0 0 2px gray;
+    margin-right: 20px;
 }
 .update-btn:hover {
     background-color: #51a651;
