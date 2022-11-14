@@ -26,17 +26,10 @@ export const FooterIMG = () => {
           <h2 className="icon">from our instagram</h2>
           {photos.map((photo) => {
             return (
-              <>
-                <div className="footerIMG_image">
-                  <LikeButton />
-                  <img
-                    src={photo.Image}
-                    width="100%"
-                    height="100%"
-                    key={`photo__${photo.id}`}
-                  />
-                </div>
-              </>
+              <div className="footerIMG_image" key={`photo__${photo.id}`}>
+                <LikeButton />
+                <img src={photo.Image} width="100%" height="100%" />
+              </div>
             );
           })}
         </article>
