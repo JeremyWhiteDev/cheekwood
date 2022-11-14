@@ -3,7 +3,7 @@ import { isCompositeComponent } from "react-dom/test-utils";
 import { useParams } from "react-router-dom";
 import { Comment } from "./Comment";
 
-export const CommentList = () => {
+export const CommentList = ({ eventId }) => {
   const [patronComments, setPatronComments] = useState([]);
 
   const [commentIsOpen, setCommentOpen] = useState(false);
@@ -16,7 +16,8 @@ export const CommentList = () => {
 
   const [commentPageNumber, setCommentPage] = useState({ currentPage: 1 });
   const [totalCommentLength, setTotalCommentLength] = useState(0);
-  const { eventId } = useParams();
+
+  // const { eventId } = useParams();
 
   const [users, setUsers] = useState([]);
 

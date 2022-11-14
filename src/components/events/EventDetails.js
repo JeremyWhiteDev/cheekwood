@@ -154,7 +154,7 @@ export const EventDetails = () => {
         </div>
       </article>
       <div className="comment-container">
-        <CommentList className="center" />
+        <CommentList className="center" eventId={eventId} />
       </div>
     </>
   );
