@@ -150,8 +150,8 @@ export const EventDetails = () => {
         <div className="event-info-section">
           <img className="event-details-img" src={event.linkImage}></img>
         </div>
-        <CommentList />
       </article>
+      <CommentList className="center" />
     </>
   );
 };

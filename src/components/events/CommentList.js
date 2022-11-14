@@ -94,13 +94,13 @@ export const CommentList = () => {
   return (
     <>
       <section className="comment-list">
-        <div className="mb-1 xl bold">Join the Conversation:</div>
+        <div className="mb-1 xl bold w-600 center">Join the Conversation:</div>
 
         {commentIsOpen ? (
           <>
             <input
               id="commentField"
-              className="comment-field"
+              className="comment-field center w-100"
               autoFocus
               value={userComment.comment}
               onChange={(event) => {
@@ -109,24 +109,26 @@ export const CommentList = () => {
                 setUserComment(userCommentCopy);
               }}
             />
-            <button
-              className="comment-btn"
-              onClick={(click) => {
-                addComment(click);
-              }}
-            >
-              Submit
-            </button>
-            <button
-              className="comment-btn"
-              onClick={() => setCommentOpen(false)}
-            >
-              Cancel
-            </button>
+            <div className="comment-button-row">
+              <button
+                className="comment-btn "
+                onClick={(click) => {
+                  addComment(click);
+                }}
+              >
+                Submit
+              </button>
+              <button
+                className="comment-btn "
+                onClick={() => setCommentOpen(false)}
+              >
+                Cancel
+              </button>
+            </div>
           </>
         ) : (
           <button
-            className=" comment-btn show-comment-btn"
+            className=" comment-btn w-600 show-comment-btn center"
             onClick={() => {
               setCommentOpen(!commentIsOpen);
             }}
@@ -136,7 +138,7 @@ export const CommentList = () => {
         )}
 
         {patronComments.map((comment) => (
-          <div className="single-comment" key={comment.id}>
+          <div className="w-600 center single-comment" key={comment.id}>
             <img
               className="comment-avatar"
               src="https://ionicframework.com/docs/img/demos/avatar.svg"
@@ -149,7 +151,7 @@ export const CommentList = () => {
         ))}
         {totalCommentLength > patronComments.length ? (
           <button
-            className="comment-btn show-comment-btn"
+            className="comment-btn w-600 show-comment-btn center"
             onClick={(event) => {
               const prevObj = { ...commentPageNumber };
               prevObj.currentPage += 1;
