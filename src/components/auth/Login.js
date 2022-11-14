@@ -31,7 +31,8 @@ export const Login = () => {
       });
   };
 
-  return (
+  return <>
+    <img className="logo" src={require("../nav/nav-images/logo.png")} alt="" />
     <main className="container--login">
       <section>
         <form className="form--login" onSubmit={handleLogin}>
@@ -53,14 +54,15 @@ export const Login = () => {
             <button type="submit">Sign in</button>
           </fieldset>
 
-      <section className="link--register">
-        <Link to="/register">Not a member yet?</Link>
+          <section className="link--register">
+            <Link to="/register">Not a member yet?</Link>
           </section>
-          </form>
-          </section>
+        </form>
+      </section>
       <>
-      <Footer/>
+        <Footer />
       </>
     </main>
-  );
+  </>
+
 };

@@ -4,6 +4,7 @@ import { AboutUs } from "../aboutUs/AboutUs";
 import { EventDetails } from "../events/EventDetails";
 import { EventForm } from "../events/EventForm";
 import { Map } from "../map/Map";
+import { Event } from "../events/Event";
 import { Profile } from "../profile/Profile";
 
 export const ApplicationViews = () => {
@@ -17,6 +18,7 @@ export const ApplicationViews = () => {
       <Route path="/events" element={<EventList />} />
       <Route path="/event/:eventId" element={<EventDetails />} />
       <Route path="/profile" element={<Profile />} />
+      <Route exact path="/" element={<AboutUs />} />
       <Route path="/aboutUs" element={<AboutUs />} />
       <Route path="/map" element={<Map />} />
 
@@ -31,14 +33,6 @@ export const ApplicationViews = () => {
       ) : (
         ""
       )}
-
-      {/*       {projectUserObject.userType === "patron" ? (
-        <>
-          <Route path="/profile" element={<Profile />} />
-        </>
-      ) : (
-        ""
-      )} */}
     </Routes>
   );
 };
