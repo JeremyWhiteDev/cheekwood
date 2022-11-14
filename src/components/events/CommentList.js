@@ -43,14 +43,14 @@ export const CommentList = () => {
   }, []);
 
   const getEventComments = async () => {
-    console.log(commentPageNumber);
+    // console.log(commentPageNumber);
     const response = await fetch(
       `http://localhost:8088/patronComments?eventId=${parseInt(
         eventId
       )}&_sort=id&_order=desc&_page=${commentPageNumber.currentPage}&_limit=5`
     );
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     const newData = patronComments.concat(data);
     setPatronComments(newData);
   };
