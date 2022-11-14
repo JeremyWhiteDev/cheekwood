@@ -73,8 +73,8 @@ export const CommentEdit = ({
         value={editCommentM.comment}
         onChange={(evt) => {
           const copy = { ...editCommentM };
-          copy.eventId = eventId;
           copy.comment = evt.target.value;
+          copy.eventId = eventId;
           copy.userId = currentUser.id;
           copy.id = id;
           //   console.log(copy);
