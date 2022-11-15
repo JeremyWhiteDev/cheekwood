@@ -9,6 +9,7 @@ import { Profile } from "../profile/Profile";
 import { CommentEdit } from "../profile/EditComments";
 import { UserForm } from "../profile/UserForm";
 import { UserComments } from "../profile/UserComments";
+import { QuestionPage } from "../questions/QuestionPage";
 
 export const ApplicationViews = () => {
   const localUser = localStorage.getItem("project_user");
@@ -24,6 +25,8 @@ export const ApplicationViews = () => {
       <Route exact path="/" element={<AboutUs />} />
       <Route path="/aboutUs" element={<AboutUs />} />
       <Route path="/map" element={<Map />} />
+      <Route path="/questions" element={<QuestionPage/>} />
+      {/* <Route path="/" element={<Footer/>} /> */}
 
       
       <Route path="/profile/:commentId" element={< UserComments />} />

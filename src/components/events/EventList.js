@@ -213,3 +213,4 @@ export const EventList = ({ }) => {
       </article> : <></>
     }</>;
 };
+ 
