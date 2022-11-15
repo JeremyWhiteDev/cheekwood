@@ -37,7 +37,7 @@ export const Map = () => {
                     </a>
                 </h2>
             </section>
-{/* {Footer()} */}
+            {/* {Footer()} */}
         </>
     );
 };

@@ -67,7 +67,7 @@ option {
     line-height: 25px;
     position: absolute;
     top: 35px;
-    left: 5px;
+    left: 170px;
     background-color: #00B189;
 
 }
@@ -82,7 +82,7 @@ option {
     width: 25px;
     position: absolute;
     top: 46.5px;
-    left: 15.5px;
+    left: 180.5px;
 }
 
 .spacer {
@@ -97,16 +97,25 @@ option {
     width: 35px;
     position: absolute;
     top: 41px;
-    left: 185px;
+    left: 10px;
 }
 
 .sortFavorited {
     width: 38px;
     position: absolute;
     top: 41px;
-    left: 235px;
+    left: 58px;
     filter: hue-rotate(164deg);
 }
+
+.sortComments {
+    width: 38px;
+    position: absolute;
+    top: 41px;
+    left: 108px;
+    filter: hue-rotate(319deg);
+}
+
 
 
 .eventSpacer {

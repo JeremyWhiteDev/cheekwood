@@ -107,7 +107,9 @@ export const Event = ({ image,
                                         <a href="#"><img src={require("./event-images/comment-box.png")}
                                             className="button" onClick={
                                                 () => {
+                                                    // link to comment box 
                                                     navigate(`/event/${id}`)
+
                                                 }
                                             } /></a>
                                         <div className="counter commentCounter">{countComments()}</div></div>
