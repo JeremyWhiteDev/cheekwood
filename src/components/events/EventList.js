@@ -172,3 +172,4 @@ export const EventList = ({ }) => {
     </article>
   );
 };
+ 
