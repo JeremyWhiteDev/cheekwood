@@ -39,4 +39,5 @@ color: #286142;
 .comment_image{
 height:200px;
 margin:10px 0px ;
+object-fit: cover;
 }
