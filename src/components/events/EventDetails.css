@@ -2,7 +2,16 @@
     max-width: 1100px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    margin:  auto;
+    background-color: #F2F2F2;
+    padding: 20px 80px;
+    position: relative;
+    border-bottom: 1px solid rgb(210, 207, 207);
+}
+.comment-container {
+    max-width: 1100px;
+
     margin:  auto;
     background-color: #F2F2F2;
     padding: 20px 80px;
@@ -10,8 +19,11 @@
 }
 
 .event-details-img {
-    width: 500px;
-    height: 500px;
+    min-width: 375px;
+    min-height: 400px;
+
+    max-width: 500px;
+    max-height: 500px;
     object-fit: cover;
     /* margin-bottom: 50px ; */
     border-radius: 12px;
@@ -20,18 +32,22 @@
 
 .comment-list {
     background-color: white;
+    /* min-width: 500px; */
     max-width: 700px;
-
+    max-height: 600px;
+    overflow-y:auto;
     /* min-width: 700px; */
-    margin-top: 40px;
+    margin: 40px auto;
     padding: 15px 40px;
     border-radius: 14px;
+    box-shadow: 0 0 4px gray;
+    /* padding: 40px; */
 }
 
 .event-description {
     /* background-color: aqua; */
     max-width: 500px;
-    min-width: 450px;
+    min-width: 350px;
     padding: 5px 10px;
     line-height: 1.5;
     padding: 50px 50px 0 50px;
@@ -49,6 +65,7 @@
     max-width: 1100px;
     margin:  auto;
     padding: 20px;
+    color: white;
     
 }
 
@@ -74,8 +91,9 @@
     padding: 10px 20px;
     margin: 5px 10px;
     line-height: 1.5;
-    /* width: 100%; */
-    min-width: 500px;
+    min-width: 250px;
+    width: 100%;
+    /* width: auto; */
     border-radius: 14px;
     box-sizing: border-box;
     display: inline-block;
@@ -84,7 +102,6 @@
 .comment-btn {
     background-color: #F2F2F2;
     padding: 10px 20px;
-    margin: 5px 10px;
     line-height: 1.5;
     /* width: 100%; */
     
@@ -94,11 +111,25 @@
     background-color: rgb(54, 121, 97);
     color: whitesmoke;
     border-radius: 14px;
-    border: none
+    border: none;
+    /* display: block; */
+    margin: 10px auto;
+    text-align: center;
 }
 
 .show-comment-btn {
-    min-width: 600px;
+    /* min-width: 200px; */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+   
+}
+
+.comment-button-row {
+    margin: auto;
+    display: flex;
+    gap: 10px;
+    width: 100%;
 }
 
 .comment-btn:hover {
@@ -130,6 +161,11 @@
     font-weight: 700;
 }
 
+.comment-title {
+    display: flex;
+    justify-content: space-between;
+}
+
 .save-btn {
     width: 9rem;
 }
@@ -138,7 +174,7 @@
     padding: 10px 20px;
     margin: 5px 10px;
     line-height: 1.5;
-    min-width: 600px;
+    max-width: 600px;
     font-size: large;
     display: block;
 }
@@ -169,7 +205,108 @@
 
 .comment-avatar {
     width: 50px;
+    height: 50px;
     border-radius: 50px;
     display: inline-block;
 margin-left: 15px;
+}
+
+
+@media only screen and (max-width: 850px) {
+    .event-details-container {
+        display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .w-600 {
+    max-width: 600px;
+    /* width: auto; */
+  }
+
+  .w-100 {
+    width: 100%;
+  }
+
+
+  .w-300 {
+    width: 300px;
+  }
+  .single-comment {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-grow: none;
+    align-items: center;
+  }
+
+  .right {
+    margin-left: auto;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .space-between {
+    justify-content: space-between;
+  }
+
+  .rounded {
+    border-radius: 50%;
+  }
+
+  .bg-red {
+    background-color: #d9534f;
+  }
+
+  .p-1 {
+    padding: .25rem 0.5rem;
+  }
+
+  .align-center {
+    align-items: center;
+  }
+
+  .text-white {
+    color: white
+  }
+
+  .center-y {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .pill {
+    border-radius: 14px;
+  }
+
+  .border-thin {
+    border: 1px solid gray;
+  }
+
+.hover\:bg-dark-red:hover {
+    background-color: #ae4541;
+}
+
+.mr-5 {
+    margin-right: 8px;
+}
+
+.border-none {
+    border: none;
+}
+
+.hover\:pointer-cursor:hover {
+    cursor: pointer;
+
+}
+
+.border-bottom {
+    border-bottom: 1px solid darkgray;
 }

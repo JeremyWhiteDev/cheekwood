@@ -28,7 +28,7 @@ export const EventForm = ({ variant }) => {
       const fetchData = async () => {
         const response = await fetch(`http://localhost:8088/events/${eventId}`);
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         if (data.startDate.length < 11) {
           setDateType(true);
         }
@@ -108,7 +108,7 @@ export const EventForm = ({ variant }) => {
       const foundEvent = eventTypes.find(
         (eventType) => eventType.id === eventDetails.eventTypeId
       );
-      return foundEvent.type;
+      return foundEvent?.type;
     } else {
       return "Choose The Event Type";
     }

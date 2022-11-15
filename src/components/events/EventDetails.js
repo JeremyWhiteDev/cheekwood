@@ -31,7 +31,7 @@ export const EventDetails = () => {
     const savedEventJson = await patronSavedResponse.json();
     if (savedEventJson.length > 0) {
       setSavedEvent(savedEventJson[0]);
-      console.log(savedEvent);
+      //   console.log(savedEvent);
       setSaved(true);
     } else {
       setSaved(false);
@@ -88,9 +88,11 @@ export const EventDetails = () => {
           className="event-header-img"
           src="https://cheekwood.org/wp-content/uploads/2020/01/Cheekwood-Mansion-Website-Scrollbar-Size-1135x425.jpg"
         />
-        <div className="event-header-text">
+        <div className="event-header-text text-white">
           <h1 className="mb-1 bold">{event.name}</h1>
-          <p className="mb-1  bold xl">Type of Event: {event.eventType.type}</p>
+          <p className="mb-1  bold xl text-white">
+            Type of Event: {event.eventType.type}
+          </p>
           <p className="mb-1  bold xl">Price: TBD</p>
           <p className="event-time ">
             {event.startDate.length > 10 ? (
@@ -150,8 +152,10 @@ export const EventDetails = () => {
         <div className="event-info-section">
           <img className="event-details-img" src={event.linkImage}></img>
         </div>
-        <CommentList />
       </article>
+      <div className="comment-container">
+        <CommentList className="center" eventId={eventId} />
+      </div>
     </>
   );
 };
