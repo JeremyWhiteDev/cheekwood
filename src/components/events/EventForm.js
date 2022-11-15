@@ -104,7 +104,7 @@ export const EventForm = ({ variant }) => {
   };
 
   const displayCurrentEventType = () => {
-    if (eventTypes.length > 0 && variant === "editForm") {
+    if (eventTypes.length > 0 && variant === "editForm" && eventTypes.type !== undefined) {
       const foundEvent = eventTypes.find(
         (eventType) => eventType.id === eventDetails.eventTypeId
       );

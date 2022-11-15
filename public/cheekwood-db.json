@@ -37,6 +37,11 @@
   ],
   "patronSavedEvents": [
     {
+      "id": 1,
+      "userId": 2,
+      "eventId": 1
+    },
+    {
       "id": 2,
       "userId": 3,
       "eventId": 2
@@ -166,6 +171,33 @@
     {
       "id": 12,
       "Image": "https://nashvillelifestyles.com/downloads/33898/download/0006_Cheekwood_05_2010_PA_High-res%20JPEG%20_not%20resized_.jpg?cb=fbb78b4ada1b457085d6b4e5f9edac77&w=1500"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "question": "What time do you open?",
+      "answer": "check website"
+    },
+    {
+      "id": 2,
+      "question": "What is parking like?",
+      "answer": "There is a parking lot"
+    },
+    {
+      "id": 3,
+      "question": "Is there food or should we bring our own?",
+      "answer": "Sometimes there is food"
+    },
+    {
+      "id": 4,
+      "question": "Are children allowed?",
+      "answer": "Yep"
+    },
+    {
+      "id": 5,
+      "question": "What the weather like?",
+      "answer": "IDK when are you coming? Maybe look at your weather app?"
     }
   ]
 }
