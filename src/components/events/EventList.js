@@ -8,6 +8,7 @@ export const EventList = ({ }) => {
   const [sortArray, setSortArray] = useState([])
   const [sortDate, setSortDate] = useState(false);
   const [sortFavorited, setSortFavorited] = useState(false);
+  const [sortComments, setSortComments] = useState(false);
   const [events2, setEvents2] = useState([]);
   const [eventTypes, setEventTypes] = useState([]);
   const [dropDown, setDropDown] = useState(0);
@@ -29,7 +30,7 @@ export const EventList = ({ }) => {
   const fetchEvents = async () => {
     const fetchData = async () => {
       const response = await fetch(
-        `http://localhost:8088/events?_embed=patronSavedEvents&_expand=eventType`
+        `http://localhost:8088/events?_embed=patronSavedEvents&_expand=eventType&_embed=patronComments`
       );
       const data = await response.json();
       setEvents(data);
@@ -60,6 +61,8 @@ export const EventList = ({ }) => {
   const fetchSortedCall = async () => {
     const fetchData = await fetch(`http://localhost:8088/events?_embed=patronSavedEvents&_expand=eventType&_sort=startDate&_order=desc`)
     const fetchJson = await fetchData.json()
+    setSortFavorited(false)
+    setSortComments(false)
     setFilteredEvents(fetchJson)
   }
 
@@ -70,20 +73,52 @@ export const EventList = ({ }) => {
   }, [sortDate]
   )
 
-  // const fetchSortedFavoritesDesc = async () => {
-  //   const fetchData = await fetch(`http://localhost:8088/events?_embed=patronSavedEvents&_expand=eventType&_sort=patronSavedEvents.length&_order=desc`)
-  //   const fetchJson = await fetchData.json()
-  //   setFilteredEvents(fetchJson)
-  // }
-  // const fetchSortedFavoritesAsc = async () => {
-  //   const fetchData = await fetch(`http://localhost:8088/events?_embed=patronSavedEvents&_expand=eventType&_sort=patronSavedEvents.length&_order=asc`)
-  //   const fetchJson = await fetchData.json()
-  //   setFilteredEvents(fetchJson)
-  // }
 
-  // useEffect(() => {
-  //   sortFavorited ? fetchSortedFavoritesDesc() : fetchSortedFavoritesAsc()
-  // })
+
+  const sortFavorites = () => {
+    if (events.length > 0 && events[0].name !== undefined) {
+      const copy = events.map(x => ({ ...x }))
+      if (sortFavorited) {
+        copy.sort((a, b) => b.patronSavedEvents.length - a.patronSavedEvents.length)
+        setFilteredEvents(copy)
+      } else {
+        copy.sort((a, b) => a.patronSavedEvents.length - b.patronSavedEvents.length)
+        setFilteredEvents(copy)
+      }
+    }
+  }
+  const sortComment = () => {
+    if (events.length > 0 && events[0].name !== undefined) {
+      const copy = events.map(x => ({ ...x }))
+      console.log(copy.sort((a, b) => b.patronComments.length - a.patronComments.length))
+      if (sortComments) {
+        copy.sort((a, b) => b.patronComments.length - a.patronComments.length)
+        setFilteredEvents(copy)
+      } else {
+        copy.sort((a, b) => a.patronComments.length - b.patronComments.length)
+        setFilteredEvents(copy)
+      }
+    }
+  }
+
+
+  useEffect(() => {
+    setSortComments(false)
+    setSortDate(false)
+    sortFavorites()
+
+  }, [sortFavorited])
+
+
+  useEffect(() => {
+    setSortFavorited(false)
+    setSortDate(false)
+    sortComment()
+
+  }, [sortComments])
+
+
+
 
 
   useEffect(() => {
@@ -98,78 +133,84 @@ export const EventList = ({ }) => {
   }, [dropDown, events]);
 
 
-  return (
-    <article className="events">
-      <div className="filterBar">
-        <img src={require("./event-images/calendar.png")} alt="" className="calendar" onClick={
-          () => {
-            setSortDate(!sortDate)
+  return <>
+    {events.length > 0 && events[0].name !== undefined ?
+      <article className="events">
+        <div className="filterBar">
+          <img src={require("./event-images/calendar.png")} alt="" className="calendar" onClick={
+            () => {
+              setSortDate(!sortDate)
+            }
+          } />
+          <img src={require("./event-images/favorite.png")} alt="" className="sortFavorited" onClick={
+            () => {
+              setSortFavorited(!sortFavorited)
+            }
+          } />
+          <img src={require("./event-images/comment-box.png")} alt="" className="sortComments" onClick={
+            () => {
+              setSortComments(!sortComments)
+            }
+          } />
+          {
+            <fieldset>
+              <label htmlFor="eventType">EVENT TYPE:</label>
+              <select
+                name="eventType"
+                required
+                onChange={(event) => {
+                  const select = parseInt(event.target.value);
+                  // console.log(select);
+                  setDropDown(select);
+                }}
+              >
+                <option id="procuctType--default" value={0}>
+                  All Events
+                </option>
+                {eventTypes.map((eventType) => {
+                  return (
+                    <option key={eventType.id} value={eventType.id}>
+                      {eventType.type}
+                    </option>
+                  );
+                })}
+              </select>
+            </fieldset>
           }
-        } />
-        <img src={require("./event-images/favorite.png")} alt="" className="sortFavorited" onClick={
-          () => {
-            // setSortDate(!sortDate)
-          }
-        } />
-        {
-          <fieldset>
-            <label htmlFor="eventType">EVENT TYPE:</label>
-            <select
-              name="eventType"
-              required
-              onChange={(event) => {
-                const select = parseInt(event.target.value);
-                // console.log(select);
-                setDropDown(select);
-              }}
-            >
-              <option id="procuctType--default" value={0}>
-                All Events
-              </option>
-              {eventTypes.map((eventType) => {
-                return (
-                  <option key={eventType.id} value={eventType.id}>
-                    {eventType.type}
-                  </option>
-                );
-              })}
-            </select>
-          </fieldset>
-        }
-        {cheekwoodUserObject.userType === "employee" ? (
+          {cheekwoodUserObject.userType === "employee" ? (
+            <>
+              <div className="addEventContainer">
+                <button className="addEvent" onClick={() => navigate("/add-event")}>ADD EVENT</button>
+                <img src={require("./event-images/add.png")} alt="" />
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
+        </div>
+
+        <div className="spacer"></div>
+        {filteredEvents.map((event) => (
           <>
-            <div className="addEventContainer">
-              <button className="addEvent" onClick={() => navigate("/add-event")}>ADD EVENT</button>
-              <img src={require("./event-images/add.png")} alt="" />
+            <div className="eventSpacer">
+              <Event
+                key={`event--${event.id}`}
+                id={event.id}
+                name={event.name}
+                summary={event.summary}
+                startDate={event.startDate}
+                endDate={event.endDate}
+                eventType={event?.eventType?.type}
+                image={event.linkImage}
+                patronSavedEvent={event.patronSavedEvents}
+                fetchEvents={fetchEvents}
+                events2={events2}
+                fetchEvents2={fetchEvents2}
+              />
             </div>
           </>
-        ) : (
-          <></>
-        )}
-      </div>
-
-      <div className="spacer"></div>
-      {filteredEvents.map((event) => (
-        <>
-          <div className="eventSpacer">
-            <Event
-              key={`event--${event.id}`}
-              id={event.id}
-              name={event.name}
-              summary={event.summary}
-              startDate={event.startDate}
-              endDate={event.endDate}
-              eventType={event?.eventType?.type}
-              image={event.linkImage}
-              patronSavedEvent={event.patronSavedEvents}
-              fetchEvents={fetchEvents}
-              events2={events2}
-              fetchEvents2={fetchEvents2}
-            />
-          </div>
-        </>
-      ))}
-    </article>
-  );
+        ))}
+      </article> : <></>
+    }</>;
 };
  

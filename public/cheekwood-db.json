@@ -36,7 +36,7 @@
     }
   ],
   "patronSavedEvents": [
- {
+    {
       "id": 1,
       "userId": 2,
       "eventId": 1
@@ -170,29 +170,29 @@
   ],
   "questions": [
     {
-      "id":1,
-      "question":"What time do you open?",
-      "answer":"check website"
+      "id": 1,
+      "question": "What time do you open?",
+      "answer": "check website"
     },
     {
-      "id":2,
-      "question":"What is parking like?",
-      "answer":"There is a parking lot"
+      "id": 2,
+      "question": "What is parking like?",
+      "answer": "There is a parking lot"
     },
     {
-      "id":3,
-      "question":"Is there food or should we bring our own?",
-      "answer":"Sometimes there is food"
+      "id": 3,
+      "question": "Is there food or should we bring our own?",
+      "answer": "Sometimes there is food"
     },
     {
-      "id":4,
-      "question":"Are children allowed?",
-      "answer":"Yep"
+      "id": 4,
+      "question": "Are children allowed?",
+      "answer": "Yep"
     },
     {
-      "id":5,
-      "question":"What the weather like?",
-      "answer":"IDK when are you coming? Maybe look at your weather app?"
+      "id": 5,
+      "question": "What the weather like?",
+      "answer": "IDK when are you coming? Maybe look at your weather app?"
     }
-]
+  ]
 }
