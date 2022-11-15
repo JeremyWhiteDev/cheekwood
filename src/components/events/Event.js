@@ -102,7 +102,8 @@ export const Event = ({
                 <ul>
                   <li className="eventName">{name}</li>
                   <li className="eventDates">
-                    {startDate} - {endDate}
+                    {new Date(startDate).toLocaleDateString()} -{" "}
+                    {new Date(endDate).toLocaleDateString()}
                   </li>
                   <li className="summary">{summary}</li>
                 </ul>
