@@ -36,11 +36,6 @@
     }
   ],
   "patronSavedEvents": [
- {
-      "id": 1,
-      "userId": 2,
-      "eventId": 1
-    },
     {
       "id": 2,
       "userId": 3,
@@ -50,6 +45,11 @@
       "id": 3,
       "userId": 4,
       "eventId": 3
+    },
+    {
+      "userId": 2,
+      "eventId": 1,
+      "id": 4
     }
   ],
   "patronComments": [
