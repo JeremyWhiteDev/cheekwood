@@ -45,8 +45,8 @@ export const CommentList = ({ eventId }) => {
 
       const data = await response.json();
       // console.log(data);
-      const newData = patronComments.concat(data);
-      setPatronComments(newData);
+      // const newData = patronComments.concat(data);
+      setPatronComments(data);
     };
     getEventComments();
   };
