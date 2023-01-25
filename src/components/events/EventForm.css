@@ -1,7 +1,6 @@
 .event-form-component {
     width: 100%;
     max-width: 80%;
-
     display: flex;
     justify-content: space-between;
     margin: auto;
@@ -9,8 +8,6 @@
 }
 
 .event-form {
-
-    /* height: 100vh; */
     width: 100%;
     max-width: 600px;
     padding: 20px;
@@ -20,32 +17,30 @@
 .preview-img-component {
     margin-left: 50px;
 }
+
 .preview-img {
     width: 100%;
     max-width: 300px;
-/* margin-left: 50px; */
-margin-top: 15px;
-text-align: center;
-border-radius: 4px;
-/* box-shadow: 0 0 4px rgb(83, 83, 83); */
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 4px;
 }
 
 h3 {
     text-align: center;
     width: 50%;
     margin: auto;
-
 }
 
 textarea {
     border-radius: 12px;
 }
+
 .preview-img:before {
     content: ' ';
     display: block;
-    /* position: absolute; */
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 300px;
     width: 300px;
     margin: auto;
@@ -66,8 +61,6 @@ input, textarea {
     box-sizing: border-box;
 }
 
-
-
 .form-field {
     width: 100%;
     line-height: 2.5;
@@ -85,11 +78,13 @@ input, textarea {
     border: 1px solid gray;
     box-shadow: 0 0 2px gray;
 }
+
 .submit-btn:hover {
  
     background-color: #51a651;
     cursor: pointer;
 }
+
 .update-btn {
     width: 40%;
     height: 40px;
@@ -102,10 +97,12 @@ input, textarea {
     box-shadow: 0 0 2px gray;
     margin-right: 20px;
 }
+
 .update-btn:hover {
     background-color: #51a651;
     cursor: pointer;
 }
+
 .delete-btn {
     width: 40%;
     height: 40px;
@@ -117,6 +114,7 @@ input, textarea {
     border: 1px solid gray;
     box-shadow: 0 0 2px gray;
 }
+
 .delete-btn:hover {
     background-color: #51a651;
     cursor: pointer;
