@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useState } from "react";
 
 export const CommentEdit = ({
   commentObject,
@@ -8,29 +7,12 @@ export const CommentEdit = ({
   id,
   eventId,
 }) => {
-  const { commentId } = useParams();
   const [editCommentM, updateEditComment] = useState({
     comment: myComment,
   });
 
-  /* ------------------------------ */
-  /* async */
-  //   useEffect(() => {
-  //     const fetchData = async () => {
-  //       //   const response = await fetch(
-  //       //     //`http://localhost:8088/patronComments/${commentObject.id}`
-  //       //     `http://localhost:8088/patronComments?&userId=${commentObject.userId} `
-  //       //   );
-  //       //   const data = await response.json();
-  //       //   //console.log(data);
-  //       //   updateEditComment(data[0]);
-  //     };
-  //     fetchData();
-  //   }, []);
-  /* ------------------------------ */
-
   /* -------------Edit----------------- */
-  /* async */
+
   const editComment = async (SendToAPI) => {
     const fetchOptions = {
       method: "PUT",
@@ -40,9 +22,7 @@ export const CommentEdit = ({
       body: JSON.stringify(SendToAPI),
     };
     const response = await fetch(
-      //`http://localhost:8088/patronComments/edit/${commentId}`,
       `http://localhost:8088/patronComments/${commentObject.id}`,
-      //`http://localhost:8088/patronComments?/${editCommentM.id}`,
       fetchOptions
     );
     const responseJson = await response.json();
@@ -77,7 +57,6 @@ export const CommentEdit = ({
           copy.eventId = eventId;
           copy.userId = currentUser.id;
           copy.id = id;
-          //   console.log(copy);
           updateEditComment(copy);
         }}
       />
