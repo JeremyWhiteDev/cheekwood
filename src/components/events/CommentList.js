@@ -1,6 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import { isCompositeComponent } from "react-dom/test-utils";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { Comment } from "./Comment";
 
 export const CommentList = ({ eventId }) => {
@@ -17,8 +15,6 @@ export const CommentList = ({ eventId }) => {
   const [commentPageNumber, setCommentPage] = useState({ currentPage: 1 });
   const [totalCommentLength, setTotalCommentLength] = useState(0);
 
-  // const { eventId } = useParams();
-
   const [users, setUsers] = useState([]);
 
   const localUser = localStorage.getItem("project_user");
@@ -34,7 +30,6 @@ export const CommentList = ({ eventId }) => {
     setUsers(userData);
 
     const getEventComments = async () => {
-      // console.log(commentPageNumber);
       const response = await fetch(
         `http://localhost:8088/patronComments?eventId=${eventId}&_sort=id&_order=desc&_page=1&_limit=5`
       );
@@ -44,21 +39,17 @@ export const CommentList = ({ eventId }) => {
       setTotalCommentLength(commentLength);
 
       const data = await response.json();
-      // console.log(data);
-      // const newData = patronComments.concat(data);
       setPatronComments(data);
     };
     getEventComments();
   };
   useEffect(() => {
     const getEventComments = async () => {
-      // console.log(commentPageNumber);
       const commentResponse = await fetch(
         `http://localhost:8088/patronComments?eventId=${eventId}&_sort=id&_order=desc&_page=${commentPageNumber.currentPage}&_limit=5`
       );
 
       const commentData = await commentResponse.json();
-      // console.log(commentData);
 
       if (commentData.length > 0) {
         const newData = patronComments.concat(commentData);
@@ -168,7 +159,6 @@ export const CommentList = ({ eventId }) => {
               const prevObj = { ...commentPageNumber };
               prevObj.currentPage += 1;
               setCommentPage(prevObj);
-              // addComment(event);
             }}
           >
             Show More Comments
