@@ -119,7 +119,6 @@ export const AboutUs = () => {
           </div>
         </section>
       </div>
-      {/* {Footer()} */}
     </>
   );
 };
