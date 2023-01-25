@@ -40,14 +40,12 @@
 }
 
 .event-description {
-    /* background-color: aqua; */
     max-width: 500px;
     min-width: 350px;
     padding: 5px 10px;
     line-height: 1.5;
     padding: 50px 50px 0 50px;
     font-size: x-large;
-    /* height: fit-content; */
 }
 .event-header {
     width: 100vw;
@@ -87,7 +85,6 @@
     line-height: 1.5;
     min-width: 250px;
     width: 100%;
-    /* width: auto; */
     border-radius: 14px;
     box-sizing: border-box;
     display: inline-block;
@@ -96,9 +93,7 @@
 .comment-btn {
     background-color: #F2F2F2;
     padding: 10px 20px;
-    line-height: 1.5;
-    /* width: 100%; */
-    
+    line-height: 1.5; 
     border-radius: 14px;
     font-size: large;
     font-weight: 600;
@@ -106,13 +101,11 @@
     color: whitesmoke;
     border-radius: 14px;
     border: none;
-    /* display: block; */
     margin: 10px auto;
     text-align: center;
 }
 
 .show-comment-btn {
-    /* min-width: 200px; */
     display: flex;
     justify-content: center;
     width: 100%;
@@ -179,21 +172,17 @@
 }
 
 .svg-saved {
-    /* display: block; */
-    
     fill: rgb(255, 75, 75);
 }
 
 .svg-not-saved {
     fill: rgb(182, 182, 182);
-
 }
 
 .button-options {
     display: flex;
     max-width: 400px;
     align-items: center;
-    /* gap: 10px; */
     justify-content: space-between;
 }
 
@@ -221,7 +210,6 @@ margin-left: 15px;
 
   .w-600 {
     max-width: 600px;
-    /* width: auto; */
   }
 
   .w-100 {
