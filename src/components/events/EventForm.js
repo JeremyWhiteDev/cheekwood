@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./EventForm.css";
 
@@ -13,14 +13,9 @@ export const EventForm = ({ variant }) => {
     linkImage: "",
   });
   const [dateTypeIsAllDay, setDateType] = useState(false);
-
   const [eventTypes, setEventTypes] = useState([]);
-
   const [filteredEventTypes, setFilteredEventTypes] = useState([]);
-
   const { eventId } = useParams();
-  // console.log(eventId);
-
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,7 +23,6 @@ export const EventForm = ({ variant }) => {
       const fetchData = async () => {
         const response = await fetch(`http://localhost:8088/events/${eventId}`);
         const data = await response.json();
-        // console.log(data);
         if (data.startDate.length < 11) {
           setDateType(true);
         }
@@ -104,7 +98,11 @@ export const EventForm = ({ variant }) => {
   };
 
   const displayCurrentEventType = () => {
-    if (eventTypes.length > 0 && variant === "editForm" && eventTypes.type !== undefined) {
+    if (
+      eventTypes.length > 0 &&
+      variant === "editForm" &&
+      eventTypes.type !== undefined
+    ) {
       const foundEvent = eventTypes.find(
         (eventType) => eventType.id === eventDetails.eventTypeId
       );
