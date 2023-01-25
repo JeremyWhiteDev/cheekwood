@@ -1,8 +1,6 @@
-
 * {
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
 }
 
 .About {
@@ -12,6 +10,7 @@
     color: #ffffff;
     font-family: "Arial";
 }
+
 .about_image {
     position: relative;
     bottom: 0;
@@ -19,6 +18,7 @@
     height: 40vmin;
     background: none;
 }
+
 .about_border_1 {
     
     background-color: #EEEEEE;
@@ -28,7 +28,6 @@
 
 .about_content{
     width:90vmax; 
-   /*  padding: 1rem; */
     text-align: justify;
     justify-content: center;
     display: flex;
@@ -36,6 +35,7 @@
     flex-direction: row;
     margin: 1rem; 
 }
+
 .about_p{
     margin: 0.5rem;
     max-width: 30rem;
@@ -43,12 +43,12 @@
     
 }
 
-
 h2{
     font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
     color: #286142;
 }
+
 .about_links{
     width:90vmax; 
     display: flex;
@@ -57,6 +57,7 @@ h2{
     justify-content: center;
     margin-bottom: 2rem;
 }
+
 .cta{
     padding: 0.5rem;
     margin: 0.2rem;
@@ -84,6 +85,3 @@ h2{
     float: left;
     text-align: center;
 }
-
-
-
