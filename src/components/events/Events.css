@@ -152,8 +152,6 @@ body {
     display: flex;
 }
 
-
-
 .favorites img {
     filter: hue-rotate(0deg) grayscale(99%);
     position: relative;
@@ -179,11 +177,8 @@ body {
 
 .commentCounter {
     background-color: #01AEEF;
-    /* box-shadow: 0px 0px 0px 2px #01AEEF; */
 }
 
 .favCounter {
     background-color: #DD4346;
-    /* box-shadow: 0px 0px 0px 2px #DD4346; */
-
 }
