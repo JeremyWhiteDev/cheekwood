@@ -21,27 +21,22 @@
 .event-details-img {
     min-width: 375px;
     min-height: 400px;
-
     max-width: 500px;
     max-height: 500px;
     object-fit: cover;
-    /* margin-bottom: 50px ; */
     border-radius: 12px;
     box-shadow: 0 0 4px gray;
 }
 
 .comment-list {
     background-color: white;
-    /* min-width: 500px; */
     max-width: 700px;
     max-height: 600px;
     overflow-y:auto;
-    /* min-width: 700px; */
     margin: 40px auto;
     padding: 15px 40px;
     border-radius: 14px;
     box-shadow: 0 0 4px gray;
-    /* padding: 40px; */
 }
 
 .event-description {
@@ -58,7 +53,6 @@
     width: 100vw;
     color: whitesmoke !important;
     background: linear-gradient(0deg, hsla(147, 42%, 27%, 1) 0%, hsla(158, 21%, 53%, 1) 74%);
-    /* box-shadow: 5px 0 10px gray; */
 }
 
 .event-header-text {
@@ -66,7 +60,7 @@
     margin:  auto;
     padding: 20px;
     color: white;
-    
+    text-align: left;
 }
 
 .event-header-img {
