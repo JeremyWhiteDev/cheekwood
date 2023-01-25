@@ -138,7 +138,6 @@ export const Event = ({
                           src={require("./event-images/comment-box.png")}
                           className="button"
                           onClick={() => {
-                            // navigate(`/event/${id}`);
                             setModalIsActive(true);
                           }}
                         />
