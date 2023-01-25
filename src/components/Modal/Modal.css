@@ -1,10 +1,8 @@
 .modal--user {
     position: fixed;
-    /* opacity: 0; */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* background-color: white; */
     width: 80%;
     max-width: 540px;
     z-index: 1000;
