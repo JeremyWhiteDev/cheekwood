@@ -7,20 +7,20 @@ export const UserComments = () => {
   /* --------------------------------- */
   const localCheekwoodUser = localStorage.getItem("project_user");
   const cheekwoodUserObject = JSON.parse(localCheekwoodUser);
-  //   console.log(cheekwoodUserObject);
+
   /* -------------Display-------------- */
   useEffect(() => {
     const fetchData = async () => {
       /* fetch Ticket */
       const response = await fetch(
         `http://localhost:8088/patronComments?&userId=${cheekwoodUserObject.id}&_expand=event`
-        //`http://localhost:8088/patronComments?&userId=${cheekwoodUserObject.id} `
       );
       const CommentArray = await response.json();
       setComments(CommentArray);
     };
     fetchData();
   }, []);
+
   return (
     <>
       <section className="comment_form">
