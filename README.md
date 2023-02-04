@@ -40,7 +40,7 @@ This application was a group project created as part of Nashville Software Schoo
 
 - Routes and react router - Making sure that certain components (navbar, footer) were displayed on every view properly
 - Reactivity based on dropdowns - On the event list, we wanted there to be a dropdown to filter the list based on event types. Having never implemented such a feature, this turned out to be a much more challenging for the team than expected and took a lot of effort.
-- Structural layout of components - Trying to maintain single-resposnibilty of components in a meaningful way. This being the first Reactr project of this scale, the team struggled in the architecture of
+- Structural layout of components - This being the first React project of this scale, the team struggled in the architecture of components. Finding the balance between simple, easy to understand components vs the introduction of compex relations between components, deeply nested components, and difficult to follow prop drilling.
 - Time constraints -
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
