@@ -1,4 +1,47 @@
-# Getting Started with Create React App
+# Cheekwood
+
+Cheekwood is a web application that allows a local Navhille museum to create events that users can interact with.
+
+This application was a group project created as part of Nashville Software School's Full Stack Web Development Bootcamp. It was the first group project in the curriculum utilizing the ReactJS library. All whiteboarding, planning, and coding were completed within a 9 day sprint.
+
+## Contribution Highlights
+
+[Erica Clayton](https://github.com/erica-clayton) - Event list with filtering capabilities. FAQ page with reactive accordian to show/hide different sections.
+
+[Mariana Mena](https://github.com/Mary-Mena21) - User profile views to edit user account info and display/edit favorite events. Map and About Us views, footer component with reactive photos that can be liked.
+
+[Robert Stroud](https://github.com/r-stroud) - Navbar, CSS styles throughout, event card with reactive favorite/unfavorite funtionality. Functionality to sort events in the event list.
+
+[Jeremy White](https://github.com/JeremyWhiteDev) - Forms for creating and editing events. Event details view with pagination of comments. Functionality to edit/delete comments. Comments modal. Routes for staff/patrons.
+
+## Table of Contents
+
+- [Cheekwood](#gizmo)
+  - [Contribution Highlights](#contribution-highlights)
+  - [Technologies Used](#technologies-used)
+  - [Challenges Faced](#challenges-faced)
+  - [Current Features](#current-features)
+    - [For Un-Authorized users:](#for-un-authorized-users)
+    - [For Authorized Users:](#for-authorized-users)
+  - [Possible Future Features](#possible-future-features)
+  - [How to Install and Run](#how-to-install-and-run)
+  - [Credits](#credits)
+  - [Links](#links)
+
+## Technologies Used
+
+<a href="https://reactjs.org/" title="React JS"><img src="https://github.com/get-icon/geticon/raw/master/icons/react.svg" alt="React JS" width="50px" height="50px"></a>
+<a href="https://reactrouter.com/en/main" title="React Router"><img src="https://reactrouter.com/_brand/react-router-mark-color.svg" alt="React Router" width="50px" height="50px"></a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" title="JavaScript"><img src="https://github.com/get-icon/geticon/raw/master/icons/javascript.svg" alt="JavaScript" width="50px" height="50px"></a>
+<a href="https://www.w3.org/TR/CSS/" title="CSS"><img src="https://github.com/get-icon/geticon/raw/master/icons/css-3.svg" alt="CSS" width="50px" height="63px"></a>
+<a href="https://www.npmjs.com/" title="npm"><img src="https://github.com/get-icon/geticon/raw/master/icons/npm.svg" alt="npm" width="50px" height="50px"></a>
+
+## Challenges Faced
+
+- Routes and react router - Making sure that certain components (navbar, footer) were displayed on every view properly
+- Reactivity based on dropdowns - On the event list, we wanted there to be a dropdown to filter the list based on event types. Having never implemented such a feature, this turned out to be a much more challenging for the team than expected and took a lot of effort.
+- Structural layout of components - Trying to maintain single-resposnibilty of components in a meaningful way. This being the first Reactr project of this scale, the team struggled in the architecture of
+- Time constraints -
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
